@@ -93,13 +93,13 @@ namespace WPCreatorWinForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if(Directory.Exists(@"C:\Program Files (x86)/WPCreator"))
+            if(Directory.Exists(@"C:\users\"+Environment.UserName+@"\AppData\Local\WPCreator/"))
             {
-                if (Directory.Exists(@"C:\Program Files (x86)/WPCreator/config"))
+                if (Directory.Exists(@"C:\users\"+Environment.UserName+@"\AppData\Local\WPCreator/config"))
                 {
-                    if (File.Exists(@"C:\Program Files (x86)/WPCreator/config/config.txt"))
+                    if (File.Exists(@"C:\users\"+Environment.UserName+@"\AppData\Local\WPCreator/config/config.txt"))
                     {
-                        var fichier = File.ReadAllLines(@"C:\Temp\config.txt");
+                        var fichier = File.ReadAllLines(@"C:\users\"+Environment.UserName+@"\AppData\Local\WPCreator/config/config.txt");
 
                         foreach (var config in fichier)
                         {

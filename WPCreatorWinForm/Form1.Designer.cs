@@ -503,11 +503,11 @@
             // 
             this.pg_etat.BackColor = System.Drawing.Color.Silver;
             this.pg_etat.BorderRadius = 5;
-            this.pg_etat.Location = new System.Drawing.Point(499, 479);
+            this.pg_etat.Location = new System.Drawing.Point(503, 478);
             this.pg_etat.MaximumValue = 100;
             this.pg_etat.Name = "pg_etat";
             this.pg_etat.ProgressColor = System.Drawing.Color.MediumSeaGreen;
-            this.pg_etat.Size = new System.Drawing.Size(231, 26);
+            this.pg_etat.Size = new System.Drawing.Size(237, 26);
             this.pg_etat.TabIndex = 24;
             this.pg_etat.Value = 0;
             // 
