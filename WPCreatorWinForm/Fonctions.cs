@@ -201,38 +201,72 @@ namespace WPCreatorWinForm
             }
         }
 
-        public void CreationApache(string prmNomSite)
+        public void CreationApache(string prmNomSite, bool prmSwitchValue, string prmServerName)
         {
             
             lesCommandes[7] = "sudo a2ensite " + prmNomSite + ".conf";
             lesCommandes[8] = "sudo mv /tmp/" + prmNomSite + ".conf /etc/apache2/sites-available/" +prmNomSite+".conf";
-            if (Directory.Exists(@"C:\Temp"))
+            if (prmSwitchValue && prmNomSite != null)
             {
-                if (File.Exists(@"C:\Temp\"+prmNomSite+".conf"))
+                if (Directory.Exists(@"C:\Temp"))
                 {
-                    string lignes_conf = "<VirtualHost *:80> \n DocumentRoot /var/www/" + Path + "\n</VirtualHost>";
-                    File.WriteAllText(@"C:\Temp\"+prmNomSite+".conf",lignes_conf);
+                    if (File.Exists(@"C:\Temp\"+prmNomSite+".conf"))
+                    {
+                        string lignes_conf = "<VirtualHost *:80> \n DocumentRoot /var/www/" + Path + "\n ServerName "+ prmNomSite + "\n</VirtualHost>";
+                        File.WriteAllText(@"C:\Temp\"+prmNomSite+".conf",lignes_conf);
+                    }
+                    else
+                    {
+                        string lignes_conf = "<VirtualHost *:80> \n DocumentRoot /var/www/" + Path + "\n ServerName "+ prmNomSite + "\n</VirtualHost>";
+                        File.WriteAllText(@"C:\Temp\"+prmNomSite+".conf",lignes_conf);
+                    }
                 }
                 else
                 {
-                    string lignes_conf = "<VirtualHost *:80> \n DocumentRoot /var/www/" + Path + "\n</VirtualHost>";
-                    File.WriteAllText(@"C:\Temp\"+prmNomSite+".conf",lignes_conf);
+                    Directory.CreateDirectory(@"C:\Temp");
+                    if (File.Exists(@"C:\Temp\"+prmNomSite+".conf"))
+                    {
+                        string lignes_conf = "<VirtualHost *:80> \n DocumentRoot /var/www/" + Path + "\n ServerName "+ prmNomSite + "\n</VirtualHost>";
+                        File.WriteAllText(@"C:\Temp\"+prmNomSite+".conf",lignes_conf);
+                    }
+                    else
+                    {
+                        string lignes_conf = "<VirtualHost *:80> \n DocumentRoot /var/www/" + Path + "\n ServerName "+ prmNomSite + "\n</VirtualHost>";
+                        File.WriteAllText(@"C:\Temp\"+prmNomSite+".conf",lignes_conf);
+                    }
                 }
             }
             else
             {
-                Directory.CreateDirectory(@"C:\Temp");
-                if (File.Exists(@"C:\Temp\"+prmNomSite+".conf"))
+                if (Directory.Exists(@"C:\Temp"))
                 {
-                    string lignes_conf = "<VirtualHost *:80> \n DocumentRoot /var/www/" + Path + "\n</VirtualHost>";
-                    File.WriteAllText(@"C:\Temp\"+prmNomSite+".conf",lignes_conf);
+                    if (File.Exists(@"C:\Temp\"+prmNomSite+".conf"))
+                    {
+                        string lignes_conf = "<VirtualHost *:80> \n DocumentRoot /var/www/" + Path + "\n</VirtualHost>";
+                        File.WriteAllText(@"C:\Temp\"+prmNomSite+".conf",lignes_conf);
+                    }
+                    else
+                    {
+                        string lignes_conf = "<VirtualHost *:80> \n DocumentRoot /var/www/" + Path + "\n</VirtualHost>";
+                        File.WriteAllText(@"C:\Temp\"+prmNomSite+".conf",lignes_conf);
+                    }
                 }
                 else
                 {
-                    string lignes_conf = "<VirtualHost *:80> \n DocumentRoot /var/www/" + Path + "\n</VirtualHost>";
-                    File.WriteAllText(@"C:\Temp\"+prmNomSite+".conf",lignes_conf);
+                    Directory.CreateDirectory(@"C:\Temp");
+                    if (File.Exists(@"C:\Temp\"+prmNomSite+".conf"))
+                    {
+                        string lignes_conf = "<VirtualHost *:80> \n DocumentRoot /var/www/" + Path + "\n</VirtualHost>";
+                        File.WriteAllText(@"C:\Temp\"+prmNomSite+".conf",lignes_conf);
+                    }
+                    else
+                    {
+                        string lignes_conf = "<VirtualHost *:80> \n DocumentRoot /var/www/" + Path + "\n</VirtualHost>";
+                        File.WriteAllText(@"C:\Temp\"+prmNomSite+".conf",lignes_conf);
+                    }
                 }
             }
+            
             
             SessionOptions sessionOptions = new SessionOptions()
             {

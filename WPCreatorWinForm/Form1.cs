@@ -17,10 +17,7 @@ namespace WPCreatorWinForm
             InitializeComponent();
             label3.Visible = false;
             tb_servername.Visible = false;
-            
-            
         }
-
         private void sw_servername_OnValueChange(object sender, EventArgs e)
         {
             if (sw_servername.Value == false)
@@ -62,7 +59,7 @@ namespace WPCreatorWinForm
             this.pg_etat.Value = 25;
             fonctions.CreationWordpress(this.tb_nomdossier.Text, this.tb_nombdd.Text);
             this.pg_etat.Value = 64;
-            fonctions.CreationApache(this.tb_nomfichier.Text);
+            fonctions.CreationApache(this.tb_nomfichier.Text, this.sw_servername.Value, this.tb_servername.Text);
             this.pg_etat.Value = 100;
         }
     }
