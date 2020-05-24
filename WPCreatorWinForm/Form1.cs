@@ -31,7 +31,10 @@ namespace WPCreatorWinForm
         private void btn_testco_Click(object sender, EventArgs e)
         {
             Fonctions fonctions = new Fonctions(this.tb_ip.Text, this.tb_user.Text, this.tb_pass.Text);
-            fonctions.ConnexionServeur();
+            if (fonctions.ConnexionServeur())
+            {
+                lbl_status.Text = "Connexion au serveur réussie";
+            }
         }
 
         private void btn_quit_Click(object sender, EventArgs e)
@@ -51,7 +54,10 @@ namespace WPCreatorWinForm
             Fonctions fonctions = new Fonctions(this.tb_ip.Text, this.tb_user.Text, this.tb_pass.Text);
             fonctions.AffecterCommandes();
             this.pg_etat.Value = 12;
-            fonctions.ConnexionServeur();
+            if (fonctions.ConnexionServeur())
+            {
+                lbl_status.Text = "Connexion au serveur réussie";
+            }
             this.pg_etat.Value = 25;
             fonctions.CreationWordpress(this.tb_nomdossier.Text, this.tb_nombdd.Text);
             this.pg_etat.Value = 64;

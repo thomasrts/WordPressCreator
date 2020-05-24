@@ -68,7 +68,7 @@ namespace WPCreatorWinForm
                 try
                 {
                     serveur.Connect();
-                    MessageBox.Show(@"Connecté à l'hôte : " + this.IP);
+                    //MessageBox.Show(@"Connecté à l'hôte : " + this.IP);
                     serveur.Disconnect();
                     return true;
                 }

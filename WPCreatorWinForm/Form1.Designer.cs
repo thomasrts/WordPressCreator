@@ -60,6 +60,8 @@
             this.btn_saveconf = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_loadconf = new Bunifu.Framework.UI.BunifuFlatButton();
             this.cb_conf = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lbl_status = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -203,11 +205,11 @@
             // 
             this.label6.Font = new System.Drawing.Font("Montserrat Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(183, 9);
+            this.label6.Location = new System.Drawing.Point(183, 14);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(437, 54);
+            this.label6.Size = new System.Drawing.Size(437, 35);
             this.label6.TabIndex = 10;
-            this.label6.Text = "WordPress Creator\r\nv 0.1\r\n";
+            this.label6.Text = "WordPress Creator\r\n";
             this.label6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // label7
@@ -563,12 +565,12 @@
             this.btn_loadconf.Iconimage_right = null;
             this.btn_loadconf.Iconimage_right_Selected = null;
             this.btn_loadconf.Iconimage_Selected = null;
-            this.btn_loadconf.IconMarginLeft = 15;
+            this.btn_loadconf.IconMarginLeft = 10;
             this.btn_loadconf.IconMarginRight = 15;
             this.btn_loadconf.IconRightVisible = true;
             this.btn_loadconf.IconRightZoom = 0D;
             this.btn_loadconf.IconVisible = true;
-            this.btn_loadconf.IconZoom = 95D;
+            this.btn_loadconf.IconZoom = 90D;
             this.btn_loadconf.IsTab = false;
             this.btn_loadconf.Location = new System.Drawing.Point(202, 395);
             this.btn_loadconf.Name = "btn_loadconf";
@@ -588,10 +590,28 @@
             // cb_conf
             // 
             this.cb_conf.FormattingEnabled = true;
-            this.cb_conf.Location = new System.Drawing.Point(35, 409);
+            this.cb_conf.Location = new System.Drawing.Point(35, 422);
             this.cb_conf.Name = "cb_conf";
             this.cb_conf.Size = new System.Drawing.Size(133, 21);
             this.cb_conf.TabIndex = 27;
+            // 
+            // label11
+            // 
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label11.Location = new System.Drawing.Point(36, 395);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(136, 22);
+            this.label11.TabIndex = 28;
+            this.label11.Text = "Presets de configurations :";
+            // 
+            // lbl_status
+            // 
+            this.lbl_status.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lbl_status.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbl_status.Location = new System.Drawing.Point(55, 465);
+            this.lbl_status.Name = "lbl_status";
+            this.lbl_status.Size = new System.Drawing.Size(285, 54);
+            this.lbl_status.TabIndex = 29;
             // 
             // Form1
             // 
@@ -599,6 +619,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(800, 558);
+            this.Controls.Add(this.lbl_status);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.cb_conf);
             this.Controls.Add(this.btn_loadconf);
             this.Controls.Add(this.btn_saveconf);
@@ -645,6 +667,7 @@
         private System.Windows.Forms.ComboBox cb_conf;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -654,6 +677,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label labelmdp;
+        private System.Windows.Forms.Label lbl_status;
         public Bunifu.Framework.UI.BunifuProgressBar pg_etat;
         private Bunifu.Framework.UI.BunifuiOSSwitch sw_servername;
         private Bunifu.Framework.UI.BunifuMaterialTextbox tb_ip;
