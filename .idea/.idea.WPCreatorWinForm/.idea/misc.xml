@@ -3,4 +3,9 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
+  <component name="ProjectResources">
+    <resource url="schemas-microsoft-com:asm.v2" location="$PROJECT_DIR$" />
+    <resource url="schemas-microsoft-com:asm.v3" location="$PROJECT_DIR$" />
+    <xml-schema-version>XMLSchema_1_1</xml-schema-version>
+  </component>
 </project>

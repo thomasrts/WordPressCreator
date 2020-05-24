@@ -62,29 +62,29 @@ namespace WPCreatorWinForm
         private void btn_saveconf_Click(object sender, EventArgs e)
         {
             string content = this.tb_ip.Text + ";" + this.tb_user.Text + ";" + this.tb_pass.Text;
-            if(!Directory.Exists(@"C:\Program Files (x86)/WPCreator"))
+            if(!Directory.Exists(@"C:\users\"+Environment.UserName+@"\AppData\Local\WPCreator"))
             {
-                Directory.CreateDirectory(@"C:\Program Files (x86)/WPCreator");
-                if (!Directory.Exists(@"C:\Program Files (x86)/WPCreator/config"))
+                Directory.CreateDirectory(@"C:\users\"+Environment.UserName+@"\AppData\Local\WPCreator");
+                if (!Directory.Exists(@"C:\users\"+Environment.UserName+@"\AppData\Local\WPCreator\config"))
                 {
-                    Directory.CreateDirectory(@"C:\Program Files (x86)/WPCreator/config");
-                    File.AppendAllText(@"C:\Program Files (x86)/WPCreator/config/config.txt", "\n"+content);
+                    Directory.CreateDirectory(@"C:\users\"+Environment.UserName+@"\AppData\Local\WPCreator/config");
+                    File.AppendAllText(@"C:\users\"+Environment.UserName+@"\AppData\Local\WPCreator/config.txt", content+"\n");
                 }
                 else
                 {
-                    File.AppendAllText(@"C:\Program Files (x86)/WPCreator/config/config.txt", "\n"+content);
+                    File.AppendAllText(@"C:\users\"+Environment.UserName+@"\AppData\Local\WPCreator/config/config.txt", content+"\n");
                 }
             }
             else
             {
-                if (!Directory.Exists(@"C:\Program Files (x86)/WPCreator/config"))
+                if (!Directory.Exists(@"C:\users\"+Environment.UserName+@"\AppData\Local\WPCreator/config"))
                 {
-                    Directory.CreateDirectory(@"C:\Program Files (x86)/WPCreator/config");
-                    File.AppendAllText(@"C:\Program Files (x86)/WPCreator/config/config.txt", "\n"+content);
+                    Directory.CreateDirectory(@"C:\users\"+Environment.UserName+@"\AppData\Local\WPCreator/config");
+                    File.AppendAllText(@"C:\users\"+Environment.UserName+@"\AppData\Local\WPCreator/config/config.txt", content+"\n");
                 }
                 else
                 {
-                    File.AppendAllText(@"C:\Program Files (x86)/WPCreator/config/config.txt", "\n"+content);
+                    File.AppendAllText(@"C:\users\"+Environment.UserName+@"\AppData\Local\WPCreator/config/config.txt", content+"\n");
                 }
             }
                 
