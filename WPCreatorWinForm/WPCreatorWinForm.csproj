@@ -23,7 +23,7 @@
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
         <DebugType>pdbonly</DebugType>
         <Optimize>true</Optimize>
@@ -31,6 +31,7 @@
         <DefineConstants>TRACE</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="Bunifu.Core, Version=1.11.5.21, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9">
@@ -94,6 +95,9 @@
     </ItemGroup>
     <ItemGroup>
         <None Include="App.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="app.manifest" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -57,6 +57,9 @@
             this.btn_quit = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_reduce = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pg_etat = new Bunifu.Framework.UI.BunifuProgressBar();
+            this.btn_saveconf = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btn_loadconf = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.cb_conf = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -350,26 +353,27 @@
             this.btn_testco.ButtonText = "Tester la connexion";
             this.btn_testco.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_testco.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_testco.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btn_testco.Iconcolor = System.Drawing.Color.Transparent;
             this.btn_testco.Iconimage = ((System.Drawing.Image) (resources.GetObject("btn_testco.Iconimage")));
             this.btn_testco.Iconimage_right = null;
             this.btn_testco.Iconimage_right_Selected = null;
             this.btn_testco.Iconimage_Selected = null;
-            this.btn_testco.IconMarginLeft = 15;
+            this.btn_testco.IconMarginLeft = 10;
             this.btn_testco.IconMarginRight = 15;
             this.btn_testco.IconRightVisible = true;
             this.btn_testco.IconRightZoom = 0D;
             this.btn_testco.IconVisible = true;
             this.btn_testco.IconZoom = 100D;
             this.btn_testco.IsTab = false;
-            this.btn_testco.Location = new System.Drawing.Point(63, 346);
+            this.btn_testco.Location = new System.Drawing.Point(35, 327);
             this.btn_testco.Name = "btn_testco";
             this.btn_testco.Normalcolor = System.Drawing.Color.FromArgb(((int) (((byte) (46)))), ((int) (((byte) (139)))), ((int) (((byte) (87)))));
             this.btn_testco.OnHovercolor = System.Drawing.Color.FromArgb(((int) (((byte) (36)))), ((int) (((byte) (129)))), ((int) (((byte) (77)))));
             this.btn_testco.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_testco.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btn_testco.selected = false;
-            this.btn_testco.Size = new System.Drawing.Size(238, 29);
+            this.btn_testco.Size = new System.Drawing.Size(134, 48);
             this.btn_testco.TabIndex = 20;
             this.btn_testco.Text = "Tester la connexion";
             this.btn_testco.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -507,12 +511,97 @@
             this.pg_etat.TabIndex = 24;
             this.pg_etat.Value = 0;
             // 
+            // btn_saveconf
+            // 
+            this.btn_saveconf.Active = false;
+            this.btn_saveconf.Activecolor = System.Drawing.Color.FromArgb(((int) (((byte) (46)))), ((int) (((byte) (139)))), ((int) (((byte) (87)))));
+            this.btn_saveconf.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (46)))), ((int) (((byte) (139)))), ((int) (((byte) (87)))));
+            this.btn_saveconf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_saveconf.BorderRadius = 0;
+            this.btn_saveconf.ButtonText = "Sauvegarder la configuration";
+            this.btn_saveconf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_saveconf.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_saveconf.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_saveconf.Iconimage = ((System.Drawing.Image) (resources.GetObject("btn_saveconf.Iconimage")));
+            this.btn_saveconf.Iconimage_right = null;
+            this.btn_saveconf.Iconimage_right_Selected = null;
+            this.btn_saveconf.Iconimage_Selected = null;
+            this.btn_saveconf.IconMarginLeft = 15;
+            this.btn_saveconf.IconMarginRight = 15;
+            this.btn_saveconf.IconRightVisible = true;
+            this.btn_saveconf.IconRightZoom = 0D;
+            this.btn_saveconf.IconVisible = true;
+            this.btn_saveconf.IconZoom = 50D;
+            this.btn_saveconf.IsTab = false;
+            this.btn_saveconf.Location = new System.Drawing.Point(202, 327);
+            this.btn_saveconf.Name = "btn_saveconf";
+            this.btn_saveconf.Normalcolor = System.Drawing.Color.FromArgb(((int) (((byte) (46)))), ((int) (((byte) (139)))), ((int) (((byte) (87)))));
+            this.btn_saveconf.OnHovercolor = System.Drawing.Color.FromArgb(((int) (((byte) (36)))), ((int) (((byte) (129)))), ((int) (((byte) (77)))));
+            this.btn_saveconf.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_saveconf.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_saveconf.selected = false;
+            this.btn_saveconf.Size = new System.Drawing.Size(138, 48);
+            this.btn_saveconf.TabIndex = 25;
+            this.btn_saveconf.Text = "Sauvegarder la configuration";
+            this.btn_saveconf.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_saveconf.Textcolor = System.Drawing.Color.White;
+            this.btn_saveconf.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_saveconf.Click += new System.EventHandler(this.btn_saveconf_Click);
+            // 
+            // btn_loadconf
+            // 
+            this.btn_loadconf.Active = false;
+            this.btn_loadconf.Activecolor = System.Drawing.Color.FromArgb(((int) (((byte) (46)))), ((int) (((byte) (139)))), ((int) (((byte) (87)))));
+            this.btn_loadconf.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (46)))), ((int) (((byte) (139)))), ((int) (((byte) (87)))));
+            this.btn_loadconf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_loadconf.BorderRadius = 0;
+            this.btn_loadconf.ButtonText = "Charger la configuration";
+            this.btn_loadconf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_loadconf.DisabledColor = System.Drawing.Color.Gray;
+            this.btn_loadconf.Iconcolor = System.Drawing.Color.Transparent;
+            this.btn_loadconf.Iconimage = ((System.Drawing.Image) (resources.GetObject("btn_loadconf.Iconimage")));
+            this.btn_loadconf.Iconimage_right = null;
+            this.btn_loadconf.Iconimage_right_Selected = null;
+            this.btn_loadconf.Iconimage_Selected = null;
+            this.btn_loadconf.IconMarginLeft = 15;
+            this.btn_loadconf.IconMarginRight = 15;
+            this.btn_loadconf.IconRightVisible = true;
+            this.btn_loadconf.IconRightZoom = 0D;
+            this.btn_loadconf.IconVisible = true;
+            this.btn_loadconf.IconZoom = 95D;
+            this.btn_loadconf.IsTab = false;
+            this.btn_loadconf.Location = new System.Drawing.Point(202, 395);
+            this.btn_loadconf.Name = "btn_loadconf";
+            this.btn_loadconf.Normalcolor = System.Drawing.Color.FromArgb(((int) (((byte) (46)))), ((int) (((byte) (139)))), ((int) (((byte) (87)))));
+            this.btn_loadconf.OnHovercolor = System.Drawing.Color.FromArgb(((int) (((byte) (36)))), ((int) (((byte) (129)))), ((int) (((byte) (77)))));
+            this.btn_loadconf.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_loadconf.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_loadconf.selected = false;
+            this.btn_loadconf.Size = new System.Drawing.Size(138, 48);
+            this.btn_loadconf.TabIndex = 26;
+            this.btn_loadconf.Text = "Charger la configuration";
+            this.btn_loadconf.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_loadconf.Textcolor = System.Drawing.Color.White;
+            this.btn_loadconf.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btn_loadconf.Click += new System.EventHandler(this.btn_loadconf_Click);
+            // 
+            // cb_conf
+            // 
+            this.cb_conf.FormattingEnabled = true;
+            this.cb_conf.Location = new System.Drawing.Point(35, 409);
+            this.cb_conf.Name = "cb_conf";
+            this.cb_conf.Size = new System.Drawing.Size(133, 21);
+            this.cb_conf.TabIndex = 27;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(800, 558);
+            this.Controls.Add(this.cb_conf);
+            this.Controls.Add(this.btn_loadconf);
+            this.Controls.Add(this.btn_saveconf);
             this.Controls.Add(this.pg_etat);
             this.Controls.Add(this.btn_reduce);
             this.Controls.Add(this.btn_quit);
@@ -541,15 +630,19 @@
             this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
         }
 
         private Bunifu.Framework.UI.BunifuFlatButton btn_creation;
+        private Bunifu.Framework.UI.BunifuFlatButton btn_loadconf;
         private Bunifu.Framework.UI.BunifuFlatButton btn_quit;
         private Bunifu.Framework.UI.BunifuFlatButton btn_reduce;
+        private Bunifu.Framework.UI.BunifuFlatButton btn_saveconf;
         private Bunifu.Framework.UI.BunifuFlatButton btn_testco;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private System.Windows.Forms.ComboBox cb_conf;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label2;

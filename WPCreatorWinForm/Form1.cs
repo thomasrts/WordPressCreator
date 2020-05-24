@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace WPCreatorWinForm
@@ -10,6 +11,8 @@ namespace WPCreatorWinForm
             InitializeComponent();
             label3.Visible = false;
             tb_servername.Visible = false;
+            
+            
         }
         private void sw_servername_OnValueChange(object sender, EventArgs e)
         {
@@ -54,6 +57,68 @@ namespace WPCreatorWinForm
             this.pg_etat.Value = 64;
             fonctions.CreationApache(this.tb_nomfichier.Text, this.sw_servername.Value, this.tb_servername.Text);
             this.pg_etat.Value = 100;
+        }
+
+        private void btn_saveconf_Click(object sender, EventArgs e)
+        {
+            string content = this.tb_ip.Text + ";" + this.tb_user.Text + ";" + this.tb_pass.Text;
+            if(!Directory.Exists(@"C:\Program Files (x86)/WPCreator"))
+            {
+                Directory.CreateDirectory(@"C:\Program Files (x86)/WPCreator");
+                if (!Directory.Exists(@"C:\Program Files (x86)/WPCreator/config"))
+                {
+                    Directory.CreateDirectory(@"C:\Program Files (x86)/WPCreator/config");
+                    File.AppendAllText(@"C:\Program Files (x86)/WPCreator/config/config.txt", "\n"+content);
+                }
+                else
+                {
+                    File.AppendAllText(@"C:\Program Files (x86)/WPCreator/config/config.txt", "\n"+content);
+                }
+            }
+            else
+            {
+                if (!Directory.Exists(@"C:\Program Files (x86)/WPCreator/config"))
+                {
+                    Directory.CreateDirectory(@"C:\Program Files (x86)/WPCreator/config");
+                    File.AppendAllText(@"C:\Program Files (x86)/WPCreator/config/config.txt", "\n"+content);
+                }
+                else
+                {
+                    File.AppendAllText(@"C:\Program Files (x86)/WPCreator/config/config.txt", "\n"+content);
+                }
+            }
+                
+            
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            if(Directory.Exists(@"C:\Program Files (x86)/WPCreator"))
+            {
+                if (Directory.Exists(@"C:\Program Files (x86)/WPCreator/config"))
+                {
+                    if (File.Exists(@"C:\Program Files (x86)/WPCreator/config/config.txt"))
+                    {
+                        var fichier = File.ReadAllLines(@"C:\Temp\config.txt");
+
+                        foreach (var config in fichier)
+                        {
+                            cb_conf.Items.Add(config);
+                        }
+                    }
+                }
+            }
+            
+        }
+
+        private void btn_loadconf_Click(object sender, EventArgs e)
+        {
+            string input = cb_conf.SelectedItem.ToString();
+                        string[] config = new string[3];
+                        config = input.Split(';');
+                        tb_ip.Text = config[0];
+                        tb_user.Text = config[1];
+                        tb_pass.Text = config[2];
         }
     }
 }
