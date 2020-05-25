@@ -8,8 +8,8 @@ Prochaine mise à jour : Création de la fonction pour se connecter à une base 
 
 Ce logiciel utilise 3 DLL's :
 
-DLL WinSCP pour assurer le transfert des fichiers de configuration Apache
-DLL Renshi Ssh.Net pour assurer la connexion au serveur distant
-DLL Bunifu Framework, DLL graphique
+DLL WinSCP pour assurer le transfert des fichiers de configuration Apache  
+DLL Renshi Ssh.Net pour assurer la connexion au serveur distant  
+DLL Bunifu Framework, DLL graphique  
 
 Crée par Thomas ROTSAERT, [Ouranet](https://www.ouranet.com)
