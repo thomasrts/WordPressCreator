@@ -80,6 +80,9 @@ namespace WPCreatorWinForm
             }
         }
 
+        /// <summary>
+        /// Permet d'affecter les commandes SSH à envoyer
+        /// </summary>
         public void AffecterCommandes()
         {
             lesCommandes[0] = "sudo apt update && sudo apt upgrade";
@@ -93,6 +96,11 @@ namespace WPCreatorWinForm
             lesCommandes[9] = "sudo systemctl reload apache2";
         }
 
+        /// <summary>
+        /// Procède à l'installation d'un WordPress et à la création automatique d'une base de données MySQL
+        /// </summary>
+        /// <param name="prmNomDossier">Nom du dossier contenant WP</param>
+        /// <param name="prmNomBDD">Nom de la base de données</param>
         public void CreationWordpress(string prmNomDossier, string prmNomBDD)
         {
             if (ConnexionServeur())
@@ -109,24 +117,22 @@ namespace WPCreatorWinForm
                         {
                             serveur.Connect();
                             //serveur.RunCommand(lesCommandes[0]);
+                            //Mise à jour du serveur
                             serveur.Disconnect();
-                            //"Mise à jour effectuée"
-
                             try
                             {
                                 serveur.Connect();
                                 serveur.RunCommand(lesCommandes[1]);
+                                //Téléchargement de WordPress
                                 serveur.Disconnect();
-                                //"Wordpress téléchargé"
-
                                 try
                                 {
                                     serveur.Connect();
                                     serveur.RunCommand(lesCommandes[2]);
+                                    //Extraction du WP
                                     serveur.RunCommand(lesCommandes[6]);
+                                    //Suppression de l'archive WP
                                     serveur.Disconnect();
-                                    //"Wordpress extrait et archive supprimée"
-
                                     try
                                     {
                                         serveur.Connect();
@@ -134,30 +140,28 @@ namespace WPCreatorWinForm
                                         lesCommandes[4] = "sudo cd /var/www/" + prmNomDossier;
                                         lesCommandes[5] = "sudo chown -R www-data:www-data /var/www/" + prmNomDossier;
                                         lesCommandes[10] = "mysql -e 'create database " + prmNomBDD + "'";
+                                        //Redéfinition des commandes utilisées avec les paramèètres renseignés 
                                         serveur.RunCommand(lesCommandes[3]);
-
-                                        //"Wordpress déplacé"
+                                        //Déplacement du dossier WP
                                         serveur.Disconnect();
                                         try
                                         {
                                             serveur.Connect();
                                             serveur.RunCommand(lesCommandes[4]);
-
-                                            //"PWD déplacé"
+                                            //Changement du PWD
                                             serveur.Disconnect();
                                             try
                                             {
                                                 serveur.Connect();
                                                 serveur.RunCommand(lesCommandes[5]);
-
-                                                //"Propriétaire changé"
+                                                //Change le propriétaire des fichiers & dossiers du WP en www-data
                                                 serveur.Disconnect();
                                                 try
                                                 {
                                                     serveur.Connect();
                                                     serveur.RunCommand((lesCommandes[10]));
                                                     serveur.Disconnect();
-                                                    //"Base de données correctement crée : " + prmNomBDD
+                                                    //Crée la base de données en utilisant MySQL
                                                 }
                                                 catch (SshException exception)
                                                 {
@@ -203,40 +207,18 @@ namespace WPCreatorWinForm
             lesCommandes[7] = "sudo a2ensite " + prmNomSite + ".conf";
             lesCommandes[8] = "sudo mv /tmp/" + prmNomSite + ".conf /etc/apache2/sites-available/" + prmNomSite +
                               ".conf";
+            //Redéfinition des commandes SSH avec le nom du site
             if (prmSwitchValue && prmNomSite != null)
             {
+                //Vérification de l'existance des dossiers du logiciel
                 if (Directory.Exists(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator"))
                 {
                     if (Directory.Exists(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs"))
                     {
                         string lignes_conf = "<VirtualHost *:80> \n DocumentRoot /var/www/" + Path +
                                              "\n ServerName " + prmNomSite + "\n</VirtualHost>";
-                        File.WriteAllText(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs\" +
-                                              prmNomSite + ".conf", lignes_conf);
-                        
-                    }
-                    else
-                    {
-                        Directory.CreateDirectory(@"C:\users\" + Environment.UserName +
-                                                  @"\AppData\Local\WPCreator\ApacheConfs");
-                        string lignes_conf = "<VirtualHost *:80> \n DocumentRoot /var/www/" + Path +
-                                             "\n ServerName " + prmNomSite + "\n</VirtualHost>";
-                        File.WriteAllText(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs\" +
-                                              prmNomSite + ".conf", lignes_conf);
-                        
-                    }
-                }
-                else
-                {
-                    Directory.CreateDirectory(@"C:\users\" + Environment.UserName +
-                                              @"\AppData\Local\WPCreator\");
-                    
-                    if (Directory.Exists(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs"))
-                    {
-                        
-                        string lignes_conf = "<VirtualHost *:80> \n DocumentRoot /var/www/" + Path +
-                                             "\n ServerName " + prmNomSite + "\n</VirtualHost>";
-                        File.WriteAllText(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs\" +
+                        File.WriteAllText(@"C:\users\" + Environment.UserName +
+                                          @"\AppData\Local\WPCreator\ApacheConfs\" +
                                           prmNomSite + ".conf", lignes_conf);
                     }
                     else
@@ -245,7 +227,32 @@ namespace WPCreatorWinForm
                                                   @"\AppData\Local\WPCreator\ApacheConfs");
                         string lignes_conf = "<VirtualHost *:80> \n DocumentRoot /var/www/" + Path +
                                              "\n ServerName " + prmNomSite + "\n</VirtualHost>";
-                        File.WriteAllText(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs\" +
+                        File.WriteAllText(@"C:\users\" + Environment.UserName +
+                                          @"\AppData\Local\WPCreator\ApacheConfs\" +
+                                          prmNomSite + ".conf", lignes_conf);
+                    }
+                }
+                else
+                {
+                    Directory.CreateDirectory(@"C:\users\" + Environment.UserName +
+                                              @"\AppData\Local\WPCreator\");
+
+                    if (Directory.Exists(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs"))
+                    {
+                        string lignes_conf = "<VirtualHost *:80> \n DocumentRoot /var/www/" + Path +
+                                             "\n ServerName " + prmNomSite + "\n</VirtualHost>";
+                        File.WriteAllText(@"C:\users\" + Environment.UserName +
+                                          @"\AppData\Local\WPCreator\ApacheConfs\" +
+                                          prmNomSite + ".conf", lignes_conf);
+                    }
+                    else
+                    {
+                        Directory.CreateDirectory(@"C:\users\" + Environment.UserName +
+                                                  @"\AppData\Local\WPCreator\ApacheConfs");
+                        string lignes_conf = "<VirtualHost *:80> \n DocumentRoot /var/www/" + Path +
+                                             "\n ServerName " + prmNomSite + "\n</VirtualHost>";
+                        File.WriteAllText(@"C:\users\" + Environment.UserName +
+                                          @"\AppData\Local\WPCreator\ApacheConfs\" +
                                           prmNomSite + ".conf", lignes_conf);
                     }
                 }
@@ -257,13 +264,20 @@ namespace WPCreatorWinForm
                     if (Directory.Exists(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs"))
                     {
                         string lignes_conf = "<VirtualHost *:80> \n DocumentRoot /var/www/" + Path + "\n</VirtualHost>";
-                        File.WriteAllText(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs/" + prmNomSite + ".conf", lignes_conf);
+                        File.WriteAllText(
+                            @"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs/" +
+                            prmNomSite +
+                            ".conf", lignes_conf);
                     }
                     else
                     {
-                        Directory.CreateDirectory(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs");
+                        Directory.CreateDirectory(@"C:\users\" + Environment.UserName +
+                                                  @"\AppData\Local\WPCreator\ApacheConfs");
                         string lignes_conf = "<VirtualHost *:80> \n DocumentRoot /var/www/" + Path + "\n</VirtualHost>";
-                        File.WriteAllText(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs/" + prmNomSite + ".conf", lignes_conf);
+                        File.WriteAllText(
+                            @"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs/" +
+                            prmNomSite +
+                            ".conf", lignes_conf);
                     }
                 }
                 else
@@ -272,30 +286,42 @@ namespace WPCreatorWinForm
                     if (Directory.Exists(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs"))
                     {
                         string lignes_conf = "<VirtualHost *:80> \n DocumentRoot /var/www/" + Path + "\n</VirtualHost>";
-                        File.WriteAllText(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs/" + prmNomSite + ".conf", lignes_conf);
+                        File.WriteAllText(
+                            @"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs/" +
+                            prmNomSite +
+                            ".conf", lignes_conf);
                     }
                     else
                     {
-                        Directory.CreateDirectory(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs");
+                        Directory.CreateDirectory(@"C:\users\" + Environment.UserName +
+                                                  @"\AppData\Local\WPCreator\ApacheConfs");
                         string lignes_conf = "<VirtualHost *:80> \n DocumentRoot /var/www/" + Path + "\n</VirtualHost>";
-                        File.WriteAllText(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs/" + prmNomSite + ".conf", lignes_conf);
+                        File.WriteAllText(
+                            @"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs/" +
+                            prmNomSite +
+                            ".conf", lignes_conf);
                     }
-                    
                 }
             }
+        }
 
-
+        
+        public void UploadFichiers(string prmNomSite)
+        {
+            
             SessionOptions sessionOptions = new SessionOptions()
             {
                 Protocol = Protocol.Sftp,
-                HostName = "104.40.200.125",
-                UserName = "winscp",
-                Password = "#*ThomasR62",
-                SshHostKeyFingerprint = "ssh-rsa 2048 e2:9c:0d:ed:75:9c:c6:21:f9:fa:a7:10:a6:09:1b:f0"
+                HostName = this.IP,
+                UserName = this.Username,
+                Password = this.password
             };
             using (Session session = new Session())
             {
-                session.Open(sessionOptions);
+                
+                    string fingerprint = session.ScanFingerprint(sessionOptions, "SHA-256");
+                    sessionOptions.SshHostKeyFingerprint = fingerprint;
+                    session.Open(sessionOptions);
 
                 // Upload des fichiers
                 TransferOptions transferOptions = new TransferOptions();
@@ -304,7 +330,9 @@ namespace WPCreatorWinForm
                 TransferOperationResult transferResult;
 
                 transferResult =
-                    session.PutFiles(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs\" + prmNomSite + ".conf", "/tmp/" + prmNomSite + ".conf", false,
+                    session.PutFiles(
+                        @"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs\" + prmNomSite +
+                        ".conf", "/tmp/" + prmNomSite + ".conf", false,
                         transferOptions);
 
                 // Throw on any error

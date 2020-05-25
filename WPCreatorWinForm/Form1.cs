@@ -58,11 +58,15 @@ namespace WPCreatorWinForm
             }
             this.pg_etat.Value = 25;
             fonctions.CreationWordpress(this.tb_nomdossier.Text, this.tb_nombdd.Text);
-            this.pg_etat.Value = 64;
+            this.pg_etat.Value = 50;
             if (sw_apache.Value && tb_nomfichier.Text != null)
             {
                 fonctions.CreationApache(this.tb_nomfichier.Text, this.sw_servername.Value, this.tb_servername.Text);
+                this.pg_etat.Value = 80;
+                fonctions.UploadFichiers(this.tb_nomfichier.Text);
+                this.pg_etat.Value = 100;
             }
+
             this.pg_etat.Value = 100;
         }
 
