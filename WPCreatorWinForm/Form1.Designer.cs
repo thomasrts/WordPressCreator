@@ -287,7 +287,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(437, 52);
             this.label8.TabIndex = 19;
-            this.label8.Text = ("Assurez-vous que l\'utilisateur à les droits administrateur sur le serveur cible\r\n" + "" + "");
+            this.label8.Text = (("Assurez-vous que l\'utilisateur à les droits administrateur sur le serveur cible\r\n" + "" + "") + "");
             this.label8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_testco.Active = false;
             this.btn_testco.Activecolor = System.Drawing.Color.FromArgb(((int) (((byte) (46)))), ((int) (((byte) (139)))), ((int) (((byte) (87)))));
