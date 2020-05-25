@@ -31,7 +31,7 @@ namespace WPCreatorWinForm
             Fonctions fonctions = new Fonctions(this.tb_ip.Text, this.tb_user.Text, this.tb_pass.Text);
             if (fonctions.ConnexionServeur())
             {
-                lbl_status.Text = "Connexion au serveur réussie";
+                lbl_status.Text = "Connexion au serveur réussie \n Succesful connection to server";
             }
         }
 
@@ -54,14 +54,14 @@ namespace WPCreatorWinForm
             this.pg_etat.Value = 12;
             if (fonctions.ConnexionServeur())
             {
-                lbl_status.Text = "Connexion au serveur réussie";
+                lbl_status.Text = "Connexion au serveur réussie \n Succesful connection to server";
             }
             this.pg_etat.Value = 25;
             fonctions.CreationWordpress(this.tb_nomdossier.Text, this.tb_nombdd.Text);
             this.pg_etat.Value = 50;
             if (sw_apache.Value && tb_nomfichier.Text != null)
             {
-                fonctions.CreationApache(this.tb_nomfichier.Text, this.sw_servername.Value, this.tb_servername.Text);
+                fonctions.CreationApache(this.tb_nomdossier.Text,this.tb_nomfichier.Text, this.sw_servername.Value, this.tb_servername.Text);
                 this.pg_etat.Value = 80;
                 fonctions.UploadFichiers(this.tb_nomfichier.Text);
                 this.pg_etat.Value = 100;
@@ -79,7 +79,7 @@ namespace WPCreatorWinForm
                 if (!Directory.Exists(@"C:\users\"+Environment.UserName+@"\AppData\Local\WPCreator\config"))
                 {
                     Directory.CreateDirectory(@"C:\users\"+Environment.UserName+@"\AppData\Local\WPCreator/config");
-                    File.AppendAllText(@"C:\users\"+Environment.UserName+@"\AppData\Local\WPCreator/config.txt", content+"\n");
+                    File.AppendAllText(@"C:\users\"+Environment.UserName+@"\AppData\Local\WPCreator/config/config.txt", content+"\n");
                 }
                 else
                 {
@@ -98,8 +98,6 @@ namespace WPCreatorWinForm
                     File.AppendAllText(@"C:\users\"+Environment.UserName+@"\AppData\Local\WPCreator/config/config.txt", content+"\n");
                 }
             }
-                
-            
         }
 
         private void Form1_Load(object sender, EventArgs e)

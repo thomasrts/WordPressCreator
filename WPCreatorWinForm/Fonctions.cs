@@ -202,11 +202,12 @@ namespace WPCreatorWinForm
             }
         }
 
-        public void CreationApache(string prmNomSite, bool prmSwitchValue, string prmServerName)
+        public void CreationApache(string prmEmplacementWP, string prmNomSite, bool prmSwitchValue, string prmServerName)
         {
             lesCommandes[7] = "sudo a2ensite " + prmNomSite + ".conf";
             lesCommandes[8] = "sudo mv /tmp/" + prmNomSite + ".conf /etc/apache2/sites-available/" + prmNomSite +
                               ".conf";
+            Path = prmEmplacementWP;
             //Redéfinition des commandes SSH avec le nom du site
             if (prmSwitchValue && prmNomSite != null)
             {
