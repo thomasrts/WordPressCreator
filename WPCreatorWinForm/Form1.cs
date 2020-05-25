@@ -11,8 +11,6 @@ namespace WPCreatorWinForm
             InitializeComponent();
             label3.Visible = false;
             tb_servername.Visible = false;
-            
-            
         }
         private void sw_servername_OnValueChange(object sender, EventArgs e)
         {
@@ -61,7 +59,10 @@ namespace WPCreatorWinForm
             this.pg_etat.Value = 25;
             fonctions.CreationWordpress(this.tb_nomdossier.Text, this.tb_nombdd.Text);
             this.pg_etat.Value = 64;
-            fonctions.CreationApache(this.tb_nomfichier.Text, this.sw_servername.Value, this.tb_servername.Text);
+            if (sw_apache.Value && tb_nomfichier.Text != null)
+            {
+                fonctions.CreationApache(this.tb_nomfichier.Text, this.sw_servername.Value, this.tb_servername.Text);
+            }
             this.pg_etat.Value = 100;
         }
 
@@ -114,7 +115,8 @@ namespace WPCreatorWinForm
                     }
                 }
             }
-            
+
+            sw_apache.Value = true;
         }
 
         private void btn_loadconf_Click(object sender, EventArgs e)
@@ -125,6 +127,20 @@ namespace WPCreatorWinForm
                         tb_ip.Text = config[0];
                         tb_user.Text = config[1];
                         tb_pass.Text = config[2];
+        }
+
+        private void sw_apache_OnValueChange(object sender, EventArgs e)
+        {
+            if (sw_apache.Value == false)
+            {
+                label5.Visible = false;
+                tb_nomfichier.Visible = false;
+            }
+            else{
+                label5.Visible = true;
+                tb_nomfichier.Visible = true;
+            }
+                
         }
     }
 }
