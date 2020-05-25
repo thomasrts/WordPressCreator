@@ -1,4 +1,4 @@
-# WPCreatorWinForm
+# WordPressCreator
 
 ## Outil de création de WordPress automatisé en C# 
 
