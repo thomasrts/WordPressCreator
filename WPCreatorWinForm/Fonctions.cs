@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using Renci.SshNet;
 using Renci.SshNet.Common;
 using WinSCP;
@@ -16,8 +15,7 @@ namespace WPCreatorWinForm
         private string Username;
         private string password;
         private string Path;
-
-        protected Form1 _form1 = new Form1();
+        
         /* ------------------CONSTRUCTEURS ET AFFECTATIONS--------------------*/
 
         public Fonctions(string ip, string username, string password)
@@ -101,8 +99,11 @@ namespace WPCreatorWinForm
         /// </summary>
         /// <param name="prmNomDossier">Nom du dossier contenant WP</param>
         /// <param name="prmNomBDD">Nom de la base de données</param>
-        public void CreationWordpress(string prmNomDossier, string prmNomBDD)
+        /// <param name="prmNomUserMySQL">Nom d'utilisateur MySQL pour s'y connecter</param>
+        private Form1 _form1 = new Form1();
+        public void CreationWordpress(string prmNomDossier, string prmNomBDD, string prmNomUserMySQL)
         {
+       
             if (ConnexionServeur())
             {
                 using (var serveur = new SshClient(this.IP, 22, this.Username, this.password))
@@ -118,20 +119,24 @@ namespace WPCreatorWinForm
                             serveur.Connect();
                             //serveur.RunCommand(lesCommandes[0]);
                             //Mise à jour du serveur
+                            _form1.lbl_status.Text = "Mise à jour du serveur effectuée";
                             serveur.Disconnect();
                             try
                             {
                                 serveur.Connect();
                                 serveur.RunCommand(lesCommandes[1]);
                                 //Téléchargement de WordPress
+                                _form1.lbl_status.Text = "WordPress téléchargé";
                                 serveur.Disconnect();
                                 try
                                 {
                                     serveur.Connect();
                                     serveur.RunCommand(lesCommandes[2]);
                                     //Extraction du WP
+                                    _form1.lbl_status.Text = "WordPress extrait";
                                     serveur.RunCommand(lesCommandes[6]);
                                     //Suppression de l'archive WP
+                                    _form1.lbl_status.Text = "Archive WP supprimée";
                                     serveur.Disconnect();
                                     try
                                     {
@@ -139,7 +144,7 @@ namespace WPCreatorWinForm
                                         lesCommandes[3] = "sudo mv wordpress/ /var/www/" + prmNomDossier;
                                         lesCommandes[4] = "sudo cd /var/www/" + prmNomDossier;
                                         lesCommandes[5] = "sudo chown -R www-data:www-data /var/www/" + prmNomDossier;
-                                        lesCommandes[10] = "mysql -e 'create database " + prmNomBDD + "'";
+                                        lesCommandes[10] = "mysql -u "+prmNomUserMySQL+" -e 'create database " + prmNomBDD + "'";
                                         //Redéfinition des commandes utilisées avec les paramèètres renseignés 
                                         serveur.RunCommand(lesCommandes[3]);
                                         //Déplacement du dossier WP
@@ -149,17 +154,20 @@ namespace WPCreatorWinForm
                                             serveur.Connect();
                                             serveur.RunCommand(lesCommandes[4]);
                                             //Changement du PWD
+                                            _form1.lbl_status.Text = "PWD changé";
                                             serveur.Disconnect();
                                             try
                                             {
                                                 serveur.Connect();
                                                 serveur.RunCommand(lesCommandes[5]);
                                                 //Change le propriétaire des fichiers & dossiers du WP en www-data
+                                                _form1.lbl_status.Text = "Changement du propriétaire effectué";
                                                 serveur.Disconnect();
                                                 try
                                                 {
                                                     serveur.Connect();
                                                     serveur.RunCommand((lesCommandes[10]));
+                                                    _form1.lbl_status.Text = "Base de données créée";
                                                     serveur.Disconnect();
                                                     //Crée la base de données en utilisant MySQL
                                                 }
@@ -221,6 +229,7 @@ namespace WPCreatorWinForm
                         File.WriteAllText(@"C:\users\" + Environment.UserName +
                                           @"\AppData\Local\WPCreator\ApacheConfs\" +
                                           prmNomSite + ".conf", lignes_conf);
+                        _form1.lbl_status.Text = "Fichier Apache crée et prêt à être envoyé";
                     }
                     else
                     {
@@ -231,6 +240,7 @@ namespace WPCreatorWinForm
                         File.WriteAllText(@"C:\users\" + Environment.UserName +
                                           @"\AppData\Local\WPCreator\ApacheConfs\" +
                                           prmNomSite + ".conf", lignes_conf);
+                        _form1.lbl_status.Text = "Fichier Apache crée et prêt à être envoyé";
                     }
                 }
                 else
@@ -245,6 +255,7 @@ namespace WPCreatorWinForm
                         File.WriteAllText(@"C:\users\" + Environment.UserName +
                                           @"\AppData\Local\WPCreator\ApacheConfs\" +
                                           prmNomSite + ".conf", lignes_conf);
+                        _form1.lbl_status.Text = "Fichier Apache crée et prêt à être envoyé";
                     }
                     else
                     {
@@ -255,6 +266,7 @@ namespace WPCreatorWinForm
                         File.WriteAllText(@"C:\users\" + Environment.UserName +
                                           @"\AppData\Local\WPCreator\ApacheConfs\" +
                                           prmNomSite + ".conf", lignes_conf);
+                        _form1.lbl_status.Text = "Fichier Apache crée et prêt à être envoyé";
                     }
                 }
             }
@@ -269,6 +281,7 @@ namespace WPCreatorWinForm
                             @"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs/" +
                             prmNomSite +
                             ".conf", lignes_conf);
+                        _form1.lbl_status.Text = "Fichier Apache crée et prêt à être envoyé";
                     }
                     else
                     {
@@ -279,6 +292,7 @@ namespace WPCreatorWinForm
                             @"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs/" +
                             prmNomSite +
                             ".conf", lignes_conf);
+                        _form1.lbl_status.Text = "Fichier Apache crée et prêt à être envoyé";
                     }
                 }
                 else
@@ -291,6 +305,7 @@ namespace WPCreatorWinForm
                             @"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs/" +
                             prmNomSite +
                             ".conf", lignes_conf);
+                        _form1.lbl_status.Text = "Fichier Apache crée et prêt à être envoyé";
                     }
                     else
                     {
@@ -301,6 +316,7 @@ namespace WPCreatorWinForm
                             @"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs/" +
                             prmNomSite +
                             ".conf", lignes_conf);
+                        _form1.lbl_status.Text = "Fichier Apache crée et prêt à être envoyé";
                     }
                 }
             }
@@ -338,6 +354,7 @@ namespace WPCreatorWinForm
 
                 // Throw on any error
                 transferResult.Check();
+                _form1.lbl_status.Text = "Fichier Apache envoyé";
             }
 
             using (var client = new SshClient(this.IP, 22, this.Username, this.password))
@@ -346,6 +363,7 @@ namespace WPCreatorWinForm
                 {
                     client.Connect();
                     client.RunCommand(lesCommandes[8]);
+                    _form1.lbl_status.Text = "Fichier Apache déplacé dans le dossier des sites d'Apache";
                     client.Disconnect();
                     //"Déplacement du fichier de configuration effectué"
 
@@ -353,7 +371,9 @@ namespace WPCreatorWinForm
                     {
                         client.Connect();
                         client.RunCommand(lesCommandes[7]);
+                        _form1.lbl_status.Text = "Activation du site";
                         client.RunCommand(lesCommandes[9]);
+                        _form1.lbl_status.Text = "Service apache redémarré";
                         client.Disconnect();
                         MessageBox.Show(
                             @"Activation du site effectuée ! Félicitations, votre site est disponible à partir de l'adresse suivante : " +

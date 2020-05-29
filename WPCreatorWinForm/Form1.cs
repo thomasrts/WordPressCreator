@@ -57,7 +57,7 @@ namespace WPCreatorWinForm
                 lbl_status.Text = "Connexion au serveur réussie \n Succesful connection to server";
             }
             this.pg_etat.Value = 25;
-            fonctions.CreationWordpress(this.tb_nomdossier.Text, this.tb_nombdd.Text);
+            fonctions.CreationWordpress(this.tb_nomdossier.Text, this.tb_nombdd.Text, this.tb_mysql_user.Text);
             this.pg_etat.Value = 50;
             if (sw_apache.Value && tb_nomfichier.Text != null)
             {
@@ -72,7 +72,7 @@ namespace WPCreatorWinForm
 
         private void btn_saveconf_Click(object sender, EventArgs e)
         {
-            string content = this.tb_ip.Text + ";" + this.tb_user.Text + ";" + this.tb_pass.Text;
+            string content = this.tb_ip.Text + ";" + this.tb_user.Text + ";" + this.tb_pass.Text+";"+this.tb_mysql_user;
             if(!Directory.Exists(@"C:\users\"+Environment.UserName+@"\AppData\Local\WPCreator"))
             {
                 Directory.CreateDirectory(@"C:\users\"+Environment.UserName+@"\AppData\Local\WPCreator");
@@ -123,11 +123,12 @@ namespace WPCreatorWinForm
         private void btn_loadconf_Click(object sender, EventArgs e)
         {
             string input = cb_conf.SelectedItem.ToString();
-                        string[] config = new string[3];
+                        string[] config = new string[4];
                         config = input.Split(';');
                         tb_ip.Text = config[0];
                         tb_user.Text = config[1];
                         tb_pass.Text = config[2];
+                        tb_mysql_user.Text = config[3];
         }
 
         private void sw_apache_OnValueChange(object sender, EventArgs e)

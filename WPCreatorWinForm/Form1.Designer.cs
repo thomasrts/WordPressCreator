@@ -64,6 +64,8 @@
             this.lbl_status = new System.Windows.Forms.Label();
             this.sw_apache = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.label12 = new System.Windows.Forms.Label();
+            this.tb_mysql_user = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -87,7 +89,7 @@
             // label3
             // 
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(489, 414);
+            this.label3.Location = new System.Drawing.Point(489, 453);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(124, 28);
             this.label3.TabIndex = 2;
@@ -96,7 +98,7 @@
             // label4
             // 
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(539, 375);
+            this.label4.Location = new System.Drawing.Point(539, 414);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(124, 20);
             this.label4.TabIndex = 4;
@@ -151,7 +153,7 @@
             // label5
             // 
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(489, 307);
+            this.label5.Location = new System.Drawing.Point(489, 346);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(124, 28);
             this.label5.TabIndex = 7;
@@ -172,7 +174,7 @@
             this.tb_nomfichier.LineIdleColor = System.Drawing.Color.White;
             this.tb_nomfichier.LineMouseHoverColor = System.Drawing.Color.MediumSeaGreen;
             this.tb_nomfichier.LineThickness = 3;
-            this.tb_nomfichier.Location = new System.Drawing.Point(637, 318);
+            this.tb_nomfichier.Location = new System.Drawing.Point(637, 357);
             this.tb_nomfichier.Margin = new System.Windows.Forms.Padding(4);
             this.tb_nomfichier.MaxLength = 32767;
             this.tb_nomfichier.Name = "tb_nomfichier";
@@ -195,7 +197,7 @@
             this.tb_servername.LineIdleColor = System.Drawing.Color.White;
             this.tb_servername.LineMouseHoverColor = System.Drawing.Color.MediumSeaGreen;
             this.tb_servername.LineThickness = 3;
-            this.tb_servername.Location = new System.Drawing.Point(637, 414);
+            this.tb_servername.Location = new System.Drawing.Point(637, 453);
             this.tb_servername.Margin = new System.Windows.Forms.Padding(4);
             this.tb_servername.MaxLength = 32767;
             this.tb_servername.Name = "tb_servername";
@@ -230,7 +232,7 @@
             this.sw_servername.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("sw_servername.BackgroundImage")));
             this.sw_servername.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.sw_servername.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.sw_servername.Location = new System.Drawing.Point(489, 375);
+            this.sw_servername.Location = new System.Drawing.Point(489, 414);
             this.sw_servername.Name = "sw_servername";
             this.sw_servername.OffColor = System.Drawing.Color.Gray;
             this.sw_servername.OnColor = System.Drawing.Color.FromArgb(((int) (((byte) (71)))), ((int) (((byte) (202)))), ((int) (((byte) (94)))));
@@ -407,7 +409,7 @@
             this.btn_creation.IconVisible = true;
             this.btn_creation.IconZoom = 90D;
             this.btn_creation.IsTab = false;
-            this.btn_creation.Location = new System.Drawing.Point(503, 465);
+            this.btn_creation.Location = new System.Drawing.Point(503, 504);
             this.btn_creation.Name = "btn_creation";
             this.btn_creation.Normalcolor = System.Drawing.Color.FromArgb(((int) (((byte) (46)))), ((int) (((byte) (139)))), ((int) (((byte) (87)))));
             this.btn_creation.OnHovercolor = System.Drawing.Color.FromArgb(((int) (((byte) (36)))), ((int) (((byte) (129)))), ((int) (((byte) (77)))));
@@ -507,7 +509,7 @@
             // 
             this.pg_etat.BackColor = System.Drawing.Color.Silver;
             this.pg_etat.BorderRadius = 5;
-            this.pg_etat.Location = new System.Drawing.Point(503, 521);
+            this.pg_etat.Location = new System.Drawing.Point(503, 560);
             this.pg_etat.MaximumValue = 100;
             this.pg_etat.Name = "pg_etat";
             this.pg_etat.ProgressColor = System.Drawing.Color.MediumSeaGreen;
@@ -621,7 +623,7 @@
             this.sw_apache.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("sw_apache.BackgroundImage")));
             this.sw_apache.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.sw_apache.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.sw_apache.Location = new System.Drawing.Point(489, 271);
+            this.sw_apache.Location = new System.Drawing.Point(489, 310);
             this.sw_apache.Name = "sw_apache";
             this.sw_apache.OffColor = System.Drawing.Color.Gray;
             this.sw_apache.OnColor = System.Drawing.Color.FromArgb(((int) (((byte) (71)))), ((int) (((byte) (202)))), ((int) (((byte) (94)))));
@@ -633,11 +635,43 @@
             // label12
             // 
             this.label12.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label12.Location = new System.Drawing.Point(539, 271);
+            this.label12.Location = new System.Drawing.Point(539, 310);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(175, 20);
             this.label12.TabIndex = 30;
             this.label12.Text = "Fichier de conf. nécessaire?";
+            // 
+            // tb_mysql_user
+            // 
+            this.tb_mysql_user.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.tb_mysql_user.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.tb_mysql_user.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.tb_mysql_user.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_mysql_user.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.tb_mysql_user.ForeColor = System.Drawing.Color.White;
+            this.tb_mysql_user.HintForeColor = System.Drawing.Color.Empty;
+            this.tb_mysql_user.HintText = "";
+            this.tb_mysql_user.isPassword = false;
+            this.tb_mysql_user.LineFocusedColor = System.Drawing.Color.MediumSeaGreen;
+            this.tb_mysql_user.LineIdleColor = System.Drawing.Color.White;
+            this.tb_mysql_user.LineMouseHoverColor = System.Drawing.Color.MediumSeaGreen;
+            this.tb_mysql_user.LineThickness = 3;
+            this.tb_mysql_user.Location = new System.Drawing.Point(637, 260);
+            this.tb_mysql_user.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_mysql_user.MaxLength = 32767;
+            this.tb_mysql_user.Name = "tb_mysql_user";
+            this.tb_mysql_user.Size = new System.Drawing.Size(94, 31);
+            this.tb_mysql_user.TabIndex = 33;
+            this.tb_mysql_user.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // label13
+            // 
+            this.label13.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label13.Location = new System.Drawing.Point(489, 260);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(124, 28);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "Nom d\'utilisateur MySQL";
             // 
             // Form1
             // 
@@ -645,6 +679,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(800, 650);
+            this.Controls.Add(this.tb_mysql_user);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.sw_apache);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.lbl_status);
@@ -697,6 +733,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -706,11 +743,12 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label labelmdp;
-        private System.Windows.Forms.Label lbl_status;
+        public System.Windows.Forms.Label lbl_status;
         public Bunifu.Framework.UI.BunifuProgressBar pg_etat;
         private Bunifu.Framework.UI.BunifuiOSSwitch sw_apache;
         private Bunifu.Framework.UI.BunifuiOSSwitch sw_servername;
         private Bunifu.Framework.UI.BunifuMaterialTextbox tb_ip;
+        public Bunifu.Framework.UI.BunifuMaterialTextbox tb_mysql_user;
         public Bunifu.Framework.UI.BunifuMaterialTextbox tb_nombdd;
         public Bunifu.Framework.UI.BunifuMaterialTextbox tb_nomdossier;
         public Bunifu.Framework.UI.BunifuMaterialTextbox tb_nomfichier;
