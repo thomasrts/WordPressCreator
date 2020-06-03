@@ -45,7 +45,6 @@
             this.sw_servername = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.tb_pass = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.labelmdp = new System.Windows.Forms.Label();
-            this.tb_user = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.tb_ip = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -64,8 +63,9 @@
             this.lbl_status = new System.Windows.Forms.Label();
             this.sw_apache = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.label12 = new System.Windows.Forms.Label();
-            this.tb_mysql_user = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label13 = new System.Windows.Forms.Label();
+            this.tb_mysql_user = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.tb_user = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.SuspendLayout();
             // 
             // label1
@@ -74,7 +74,7 @@
             this.label1.Location = new System.Drawing.Point(489, 150);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 31);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 46;
             this.label1.Text = "Nom du dossier du WP\r\n(après le /var/www/)\r\n";
             // 
             // label2
@@ -83,7 +83,7 @@
             this.label2.Location = new System.Drawing.Point(489, 208);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 28);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 45;
             this.label2.Text = "Nom de la base de de données MySQL\r\n";
             // 
             // label3
@@ -92,7 +92,7 @@
             this.label3.Location = new System.Drawing.Point(489, 453);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(124, 28);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 55;
             this.label3.Text = "ServerName";
             // 
             // label4
@@ -101,7 +101,7 @@
             this.label4.Location = new System.Drawing.Point(539, 414);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(124, 20);
-            this.label4.TabIndex = 4;
+            this.label4.TabIndex = 66;
             this.label4.Text = "ServerName ?";
             // 
             // tb_nomdossier
@@ -124,7 +124,7 @@
             this.tb_nomdossier.MaxLength = 32767;
             this.tb_nomdossier.Name = "tb_nomdossier";
             this.tb_nomdossier.Size = new System.Drawing.Size(94, 31);
-            this.tb_nomdossier.TabIndex = 5;
+            this.tb_nomdossier.TabIndex = 3;
             this.tb_nomdossier.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // tb_nombdd
@@ -147,7 +147,7 @@
             this.tb_nombdd.MaxLength = 32767;
             this.tb_nombdd.Name = "tb_nombdd";
             this.tb_nombdd.Size = new System.Drawing.Size(94, 31);
-            this.tb_nombdd.TabIndex = 6;
+            this.tb_nombdd.TabIndex = 4;
             this.tb_nombdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label5
@@ -156,7 +156,7 @@
             this.label5.Location = new System.Drawing.Point(489, 346);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(124, 28);
-            this.label5.TabIndex = 7;
+            this.label5.TabIndex = 40;
             this.label5.Text = "Nom du fichier de configuration Apache\r\n";
             // 
             // tb_nomfichier
@@ -179,7 +179,7 @@
             this.tb_nomfichier.MaxLength = 32767;
             this.tb_nomfichier.Name = "tb_nomfichier";
             this.tb_nomfichier.Size = new System.Drawing.Size(94, 31);
-            this.tb_nomfichier.TabIndex = 8;
+            this.tb_nomfichier.TabIndex = 6;
             this.tb_nomfichier.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // tb_servername
@@ -202,7 +202,7 @@
             this.tb_servername.MaxLength = 32767;
             this.tb_servername.Name = "tb_servername";
             this.tb_servername.Size = new System.Drawing.Size(94, 31);
-            this.tb_servername.TabIndex = 9;
+            this.tb_servername.TabIndex = 7;
             this.tb_servername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label6
@@ -261,7 +261,7 @@
             this.tb_pass.MaxLength = 32767;
             this.tb_pass.Name = "tb_pass";
             this.tb_pass.Size = new System.Drawing.Size(157, 31);
-            this.tb_pass.TabIndex = 18;
+            this.tb_pass.TabIndex = 2;
             this.tb_pass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // labelmdp
@@ -272,30 +272,6 @@
             this.labelmdp.Size = new System.Drawing.Size(124, 28);
             this.labelmdp.TabIndex = 17;
             this.labelmdp.Text = "Mot de passe";
-            // 
-            // tb_user
-            // 
-            this.tb_user.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.tb_user.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.tb_user.BackColor = System.Drawing.SystemColors.Desktop;
-            this.tb_user.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.tb_user.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb_user.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tb_user.ForeColor = System.Drawing.Color.White;
-            this.tb_user.HintForeColor = System.Drawing.Color.Empty;
-            this.tb_user.HintText = "";
-            this.tb_user.isPassword = false;
-            this.tb_user.LineFocusedColor = System.Drawing.Color.MediumSeaGreen;
-            this.tb_user.LineIdleColor = System.Drawing.Color.White;
-            this.tb_user.LineMouseHoverColor = System.Drawing.Color.MediumSeaGreen;
-            this.tb_user.LineThickness = 3;
-            this.tb_user.Location = new System.Drawing.Point(183, 208);
-            this.tb_user.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_user.MaxLength = 32767;
-            this.tb_user.Name = "tb_user";
-            this.tb_user.Size = new System.Drawing.Size(157, 31);
-            this.tb_user.TabIndex = 16;
-            this.tb_user.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // tb_ip
             // 
@@ -317,7 +293,7 @@
             this.tb_ip.MaxLength = 32767;
             this.tb_ip.Name = "tb_ip";
             this.tb_ip.Size = new System.Drawing.Size(157, 31);
-            this.tb_ip.TabIndex = 15;
+            this.tb_ip.TabIndex = 0;
             this.tb_ip.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label9
@@ -465,6 +441,7 @@
             this.btn_quit.selected = false;
             this.btn_quit.Size = new System.Drawing.Size(30, 31);
             this.btn_quit.TabIndex = 22;
+            this.btn_quit.TabStop = false;
             this.btn_quit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_quit.Textcolor = System.Drawing.Color.White;
             this.btn_quit.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
@@ -500,6 +477,7 @@
             this.btn_reduce.selected = false;
             this.btn_reduce.Size = new System.Drawing.Size(30, 29);
             this.btn_reduce.TabIndex = 23;
+            this.btn_reduce.TabStop = false;
             this.btn_reduce.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_reduce.Textcolor = System.Drawing.Color.White;
             this.btn_reduce.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
@@ -641,6 +619,15 @@
             this.label12.TabIndex = 30;
             this.label12.Text = "Fichier de conf. nécessaire?";
             // 
+            // label13
+            // 
+            this.label13.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label13.Location = new System.Drawing.Point(489, 260);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(124, 28);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "Nom d\'utilisateur MySQL";
+            // 
             // tb_mysql_user
             // 
             this.tb_mysql_user.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
@@ -661,17 +648,32 @@
             this.tb_mysql_user.MaxLength = 32767;
             this.tb_mysql_user.Name = "tb_mysql_user";
             this.tb_mysql_user.Size = new System.Drawing.Size(94, 31);
-            this.tb_mysql_user.TabIndex = 33;
+            this.tb_mysql_user.TabIndex = 5;
             this.tb_mysql_user.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // label13
+            // tb_user
             // 
-            this.label13.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label13.Location = new System.Drawing.Point(489, 260);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(124, 28);
-            this.label13.TabIndex = 32;
-            this.label13.Text = "Nom d\'utilisateur MySQL";
+            this.tb_user.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.tb_user.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.tb_user.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.tb_user.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_user.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.tb_user.ForeColor = System.Drawing.Color.White;
+            this.tb_user.HintForeColor = System.Drawing.Color.Empty;
+            this.tb_user.HintText = "";
+            this.tb_user.isPassword = false;
+            this.tb_user.LineFocusedColor = System.Drawing.Color.MediumSeaGreen;
+            this.tb_user.LineIdleColor = System.Drawing.Color.White;
+            this.tb_user.LineMouseHoverColor = System.Drawing.Color.MediumSeaGreen;
+            this.tb_user.LineThickness = 3;
+            this.tb_user.Location = new System.Drawing.Point(183, 218);
+            this.tb_user.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_user.MaxLength = 32767;
+            this.tb_user.Name = "tb_user";
+            this.tb_user.Size = new System.Drawing.Size(157, 31);
+            this.tb_user.TabIndex = 67;
+            this.tb_user.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tb_user.OnValueChanged += new System.EventHandler(this.tb_user_OnValueChanged);
             // 
             // Form1
             // 
@@ -679,6 +681,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(800, 650);
+            this.Controls.Add(this.tb_user);
             this.Controls.Add(this.tb_mysql_user);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.sw_apache);
@@ -696,7 +699,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.tb_pass);
             this.Controls.Add(this.labelmdp);
-            this.Controls.Add(this.tb_user);
             this.Controls.Add(this.tb_ip);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
