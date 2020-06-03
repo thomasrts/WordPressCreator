@@ -673,7 +673,6 @@
             this.tb_user.Size = new System.Drawing.Size(157, 31);
             this.tb_user.TabIndex = 67;
             this.tb_user.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.tb_user.OnValueChanged += new System.EventHandler(this.tb_user_OnValueChanged);
             // 
             // Form1
             // 

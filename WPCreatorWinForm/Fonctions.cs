@@ -51,11 +51,6 @@ namespace WPCreatorWinForm
             password = prmPass;
         }
 
-        public void SetPath(string prmPath)
-        {
-            Path = prmPath;
-        }
-
         /*--------------------------FIN CONSTRUCTEURS-------------------------*/
         /// <summary>
         ///     Permet de tester la connexion au serveur communiqué
@@ -68,7 +63,7 @@ namespace WPCreatorWinForm
                 try
                 {
                     serveur.Connect();
-                    //MessageBox.Show(@"Connecté à l'hôte : " + this.IP);
+                    _form1.lbl_status.Text = @"Connecté à l'hôte : " + this.IP;
                     serveur.Disconnect();
                     return true;
                 }
