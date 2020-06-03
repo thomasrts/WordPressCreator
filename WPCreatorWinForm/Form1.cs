@@ -73,33 +73,32 @@ namespace WPCreatorWinForm
             else
             {
                 var content = tb_ip.Text + ";" + tb_user.Text + ";" + tb_pass.Text + ";" + tb_mysql_user;
-                            if (!Directory.Exists(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator"))
-                            {
-                                Directory.CreateDirectory(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator");
-                                if (!Directory.Exists(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\config"))
-                                {
-                                    Directory.CreateDirectory(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator/config");
-                                    File.AppendAllText(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator/config/config.txt", content + @"\n");
-                                }
-                                else
-                                {
-                                    File.AppendAllText(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator/config/config.txt", content + @"\n");
-                                }
-                            }
-                            else
-                            {
-                                if (!Directory.Exists(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator/config"))
-                                {
-                                    Directory.CreateDirectory(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator/config");
-                                    File.AppendAllText(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator/config/config.txt", content + @"\n");
-                                }
-                                else
-                                {
-                                    File.AppendAllText(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator/config/config.txt", content + @"\n");
-                                }
-                            }
+                if (!Directory.Exists(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator"))
+                {
+                    Directory.CreateDirectory(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator");
+                    if (!Directory.Exists(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\config"))
+                    {
+                        Directory.CreateDirectory(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator/config");
+                        File.AppendAllText(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator/config/config.txt", content + @"\n");
+                    }
+                    else
+                    {
+                        File.AppendAllText(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator/config/config.txt", content + @"\n");
+                    }
+                }
+                else
+                {
+                    if (!Directory.Exists(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator/config"))
+                    {
+                        Directory.CreateDirectory(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator/config");
+                        File.AppendAllText(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator/config/config.txt", content + @"\n");
+                    }
+                    else
+                    {
+                        File.AppendAllText(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator/config/config.txt", content + @"\n");
+                    }
+                }
             }
-            
         }
 
         private void Form1_Load(object sender, EventArgs e)
