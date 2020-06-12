@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
+            Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -34,16 +36,16 @@
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="Bunifu.Core, Version=1.11.5.21, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9">
-          <HintPath>..\..\..\..\Downloads\Bunifu UI WinForms 1.11.5.21\Bunifu.Core.dll</HintPath>
+            <HintPath>..\..\..\..\Downloads\Bunifu UI WinForms 1.11.5.21\Bunifu.Core.dll</HintPath>
         </Reference>
         <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9">
-          <HintPath>..\..\..\..\Downloads\Bunifu UI WinForms 1.11.5.21\Bunifu_UI_v1.5.3.dll</HintPath>
+            <HintPath>..\..\..\..\Downloads\Bunifu UI WinForms 1.11.5.21\Bunifu_UI_v1.5.3.dll</HintPath>
         </Reference>
         <Reference Include="MySql.Data, Version=6.6.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d">
-          <HintPath>..\..\WPCreator\DLL\MySql.Data.dll</HintPath>
+            <HintPath>..\..\WPCreator\DLL\MySql.Data.dll</HintPath>
         </Reference>
         <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106">
-          <HintPath>..\..\..\SSH.NET-2016.1.0-bin\lib\net40\Renci.SshNet.dll</HintPath>
+            <HintPath>..\..\..\SSH.NET-2016.1.0-bin\lib\net40\Renci.SshNet.dll</HintPath>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
@@ -57,7 +59,7 @@
         <Reference Include="System.Windows.Forms" />
         <Reference Include="System.Xml" />
         <Reference Include="WinSCPnet, Version=1.6.5.10071, Culture=neutral, PublicKeyToken=2271ec4a3c56d0bf">
-          <HintPath>..\..\WPCreator\DLL\WinSCPnet.dll</HintPath>
+            <HintPath>..\..\WPCreator\DLL\WinSCPnet.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>
@@ -71,7 +73,7 @@
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <EmbeddedResource Include="Form1.resx">
-          <DependentUpon>Form1.cs</DependentUpon>
+            <DependentUpon>Form1.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>

@@ -53,9 +53,9 @@ namespace WPCreatorWinForm
 
         /*--------------------------FIN CONSTRUCTEURS-------------------------*/
         /// <summary>
-        ///     Permet de tester la connexion au serveur communiqué
+        ///     Role : test the remote server connection
         /// </summary>
-        /// <returns>Type : bool; afin de savoir si la connexion a réussi</returns>
+        /// <returns>Type : bool; to know if connection is successed</returns>
         public bool ConnexionServeur()
         {
             using (var serveur = new SshClient(IP, 22, Username, password))
@@ -76,7 +76,7 @@ namespace WPCreatorWinForm
         }
 
         /// <summary>
-        ///     Permet d'affecter les commandes SSH à envoyer
+        ///     Function which prepare SSH commands
         /// </summary>
         public void AffecterCommandes()
         {
@@ -91,6 +91,12 @@ namespace WPCreatorWinForm
             lesCommandes[9] = "sudo systemctl reload apache2";
         }
 
+        /// <summary>
+        /// Main function which allow to implement the whole WP
+        /// </summary>
+        /// <param name="prmNomDossier">WP's folder name in /var/www/ root</param>
+        /// <param name="prmNomBDD">DB name in MySQL</param>
+        /// <param name="prmNomUserMySQL">Username to be used to log in to MySQL</param>
         public void CreationWordpress(string prmNomDossier, string prmNomBDD, string prmNomUserMySQL)
         {
             if (ConnexionServeur())
@@ -110,17 +116,17 @@ namespace WPCreatorWinForm
                             {
                                 serveur.Connect();
                                 serveur.RunCommand(lesCommandes[1]);
-                                //Téléchargement de WordPress
+                                //Téléchargement de WordPress / WP download running
                                 _form1.lbl_status.Text = @"WordPress téléchargé";
                                 serveur.Disconnect();
                                 try
                                 {
                                     serveur.Connect();
                                     serveur.RunCommand(lesCommandes[2]);
-                                    //Extraction du WP
+                                    //Extraction du WP / WP extracting
                                     _form1.lbl_status.Text = @"WordPress extrait";
                                     serveur.RunCommand(lesCommandes[6]);
-                                    //Suppression de l'archive WP
+                                    //Suppression de l'archive WP / WP Archive deleted
                                     _form1.lbl_status.Text = @"Archive WP supprimée";
                                     serveur.Disconnect();
                                     try
@@ -130,22 +136,22 @@ namespace WPCreatorWinForm
                                         lesCommandes[4] = "sudo cd /var/www/" + prmNomDossier;
                                         lesCommandes[5] = "sudo chown -R www-data:www-data /var/www/" + prmNomDossier;
                                         lesCommandes[10] = "mysql -u " + prmNomUserMySQL + " -e 'create database " + prmNomBDD + "'";
-                                        //Redéfinition des commandes utilisées avec les paramèètres renseignés 
+                                        //Redéfinition des commandes utilisées avec les paramèètres renseignés / SSH functions redefinded
                                         serveur.RunCommand(lesCommandes[3]);
-                                        //Déplacement du dossier WP
+                                        //Déplacement du dossier WP / WP's folder moved
                                         serveur.Disconnect();
                                         try
                                         {
                                             serveur.Connect();
                                             serveur.RunCommand(lesCommandes[4]);
-                                            //Changement du PWD
+                                            //Changement du PWD / PWD changed
                                             _form1.lbl_status.Text = @"PWD changé";
                                             serveur.Disconnect();
                                             try
                                             {
                                                 serveur.Connect();
                                                 serveur.RunCommand(lesCommandes[5]);
-                                                //Change le propriétaire des fichiers & dossiers du WP en www-data
+                                                //Change le propriétaire des fichiers & dossiers du WP en www-data / Changing owner of filed & folders of WP to www-data
                                                 _form1.lbl_status.Text = @"Changement du propriétaire effectué";
                                                 serveur.Disconnect();
                                                 try
@@ -154,7 +160,7 @@ namespace WPCreatorWinForm
                                                     serveur.RunCommand(lesCommandes[10]);
                                                     _form1.lbl_status.Text = @"Base de données créée";
                                                     serveur.Disconnect();
-                                                    //Crée la base de données en utilisant MySQL
+                                                    //Crée la base de données en utilisant MySQL / Creating DB into MySQL
                                                 }
                                                 catch (SshException exception)
                                                 {
@@ -199,9 +205,9 @@ namespace WPCreatorWinForm
             lesCommandes[8] = "sudo mv /tmp/" + prmNomSite + ".conf /etc/apache2/sites-available/" + prmNomSite +
                               ".conf";
             Path = prmEmplacementWP;
-            //Redéfinition des commandes SSH avec le nom du site
+            //Redéfinition des commandes SSH avec le nom du site / SSH functions redefinded
             if (prmSwitchValue && prmNomSite != null)
-                //Vérification de l'existance des dossiers du logiciel
+                //Vérification de l'existance des dossiers du logiciel / Verifying that folders have been created 
                 if (Directory.Exists(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator"))
                 {
                     if (Directory.Exists(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs"))
@@ -304,7 +310,10 @@ namespace WPCreatorWinForm
             }
         }
 
-
+        /// <summary>
+        /// Function which upload Apache conf files to server using Sftp 
+        /// </summary>
+        /// <param name="prmNomSite"></param>
         public void UploadFichiers(string prmNomSite)
         {
             var sessionOptions = new SessionOptions
@@ -320,7 +329,7 @@ namespace WPCreatorWinForm
                 sessionOptions.SshHostKeyFingerprint = fingerprint;
                 session.Open(sessionOptions);
 
-                // Upload des fichiers
+                // Upload des fichiers 
                 var transferOptions = new TransferOptions();
                 transferOptions.TransferMode = TransferMode.Binary;
 
@@ -346,7 +355,7 @@ namespace WPCreatorWinForm
                     client.RunCommand(lesCommandes[8]);
                     _form1.lbl_status.Text = @"Fichier Apache déplacé dans le dossier des sites d'Apache";
                     client.Disconnect();
-                    //"Déplacement du fichier de configuration effectué"
+                    //Déplacement du fichier de configuration effectué / Apache conf file moved
                     try
                     {
                         client.Connect();
