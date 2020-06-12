@@ -97,7 +97,7 @@ namespace WPCreatorWinForm
         /// <param name="prmNomDossier">WP's folder name in /var/www/ root</param>
         /// <param name="prmNomBDD">DB name in MySQL</param>
         /// <param name="prmNomUserMySQL">Username to be used to log in to MySQL</param>
-        public void CreationWordpress(string prmNomDossier, string prmNomBDD, string prmNomUserMySQL)
+        public void CreationWordpress(string prmNomDossier, string prmNomBDD, string prmNomUserMySQL, string prmMdpMySQL)
         {
             if (ConnexionServeur())
                 using (var serveur = new SshClient(IP, 22, Username, password))
@@ -135,7 +135,7 @@ namespace WPCreatorWinForm
                                         lesCommandes[3] = "sudo mv wordpress/ /var/www/" + prmNomDossier;
                                         lesCommandes[4] = "sudo cd /var/www/" + prmNomDossier;
                                         lesCommandes[5] = "sudo chown -R www-data:www-data /var/www/" + prmNomDossier;
-                                        lesCommandes[10] = "mysql -u " + prmNomUserMySQL + " -e 'create database " + prmNomBDD + "'";
+                                        lesCommandes[10] = "mysql -u " + prmNomUserMySQL + "--password="+prmMdpMySQL+" -e 'create database " + prmNomBDD + "'";
                                         //Redéfinition des commandes utilisées avec les paramèètres renseignés / SSH functions redefinded
                                         serveur.RunCommand(lesCommandes[3]);
                                         //Déplacement du dossier WP / WP's folder moved

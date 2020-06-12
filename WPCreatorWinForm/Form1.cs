@@ -51,7 +51,7 @@ namespace WPCreatorWinForm
             pg_etat.Value = 12;
             if (fonctions.ConnexionServeur()) lbl_status.Text = @"Connexion au serveur réussie \n Succesful connection to server";
             pg_etat.Value = 25;
-            fonctions.CreationWordpress(tb_nomdossier.Text, tb_nombdd.Text, tb_mysql_user.Text);
+            fonctions.CreationWordpress(tb_nomdossier.Text, tb_nombdd.Text, tb_mysql_user.Text, tb_mysql_mdp.Text);
             pg_etat.Value = 50;
             if (sw_apache.Value && tb_nomfichier.Text != null)
             {
