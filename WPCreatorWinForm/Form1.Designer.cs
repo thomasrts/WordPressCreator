@@ -686,7 +686,7 @@
             this.tb_mysql_mdp.ForeColor = System.Drawing.Color.White;
             this.tb_mysql_mdp.HintForeColor = System.Drawing.Color.Empty;
             this.tb_mysql_mdp.HintText = "";
-            this.tb_mysql_mdp.isPassword = false;
+            this.tb_mysql_mdp.isPassword = true;
             this.tb_mysql_mdp.LineFocusedColor = System.Drawing.Color.MediumSeaGreen;
             this.tb_mysql_mdp.LineIdleColor = System.Drawing.Color.White;
             this.tb_mysql_mdp.LineMouseHoverColor = System.Drawing.Color.MediumSeaGreen;

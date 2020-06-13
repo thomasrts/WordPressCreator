@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
-            Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <Import Project="..\packages\ILMerge.3.0.40\build\ILMerge.props" Condition="Exists('..\packages\ILMerge.3.0.40\build\ILMerge.props')" />
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -36,10 +36,10 @@
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="Bunifu.Core, Version=1.11.5.21, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9">
-            <HintPath>..\..\..\..\Downloads\Bunifu UI WinForms 1.11.5.21\Bunifu.Core.dll</HintPath>
+            <HintPath>C:\Users\Thomas\Desktop\Programmation\DLL\Bunifu\Bunifu.Core.dll</HintPath>
         </Reference>
         <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9">
-            <HintPath>..\..\..\..\Downloads\Bunifu UI WinForms 1.11.5.21\Bunifu_UI_v1.5.3.dll</HintPath>
+            <HintPath>C:\Users\Thomas\Desktop\Programmation\DLL\Bunifu\Bunifu_UI_v1.5.3.dll</HintPath>
         </Reference>
         <Reference Include="MySql.Data, Version=6.6.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d">
             <HintPath>..\..\WPCreator\DLL\MySql.Data.dll</HintPath>
@@ -84,6 +84,7 @@
             <AutoGen>True</AutoGen>
             <DependentUpon>Resources.resx</DependentUpon>
         </Compile>
+        <None Include="packages.config" />
         <None Include="Properties\Settings.settings">
             <Generator>SettingsSingleFileGenerator</Generator>
             <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -98,4 +99,17 @@
         <None Include="App.config" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+      <PropertyGroup>
+        <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
+      </PropertyGroup>
+      <Error Condition="!Exists('..\packages\ILMerge.3.0.40\build\ILMerge.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ILMerge.3.0.40\build\ILMerge.props'))" />
+    </Target>
+    <ItemGroup>
+        <PackageReference Include="ILMerge" Version="3.0.29" />
+    </ItemGroup>
+    <Target Name="ILMerge">
+        <!-- the ILMergePath property points to the location of ILMerge.exe console application -->
+        <Exec Command="$(ILMergeConsolePath) /out:WPCreatorWinForm.exe WPCreatorWinForm\bin\Debug\WinSCPnet.dll WPCreatorWinForm\bin\Debug\Renci.SshNet.dll WPCreatorWinForm\bin\Debug\MySql.Data.dll WPCreatorWinForm\bin\Debug\Bunifu.Core.dll WPCreatorWinForm\bin\Debug\Bunifu_UI_v1.5.3.dll "/>
+    </Target>
 </Project>

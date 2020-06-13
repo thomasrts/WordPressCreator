@@ -3,6 +3,15 @@
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CThomas_005CDesktop_005CProjet_0020Cr_00E9ation_0020WP_0020SSH_005CWPCreator_005CDLL_005CWinSCPnet_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CThomas_005CDesktop_005CSSH_002ENET_002D2016_002E1_002E0_002Dbin_005Clib_005Cnet40_005CRenci_002ESshNet_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005CThomas_005CDownloads_005CBunifu_0020UI_0020WinForms_00201_002E11_002E5_002E21_005CBunifu_002ECore_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
+  &lt;Assembly Path="C:\Users\Thomas\Desktop\Programmation\Projets\C#\Projet Création WP SSH\WPCreatorWinForm\WPCreatorWinForm\bin\Debug\Bunifu.Core.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Users\Thomas\Desktop\Programmation\Projets\C#\Projet Création WP SSH\WPCreatorWinForm\WPCreatorWinForm\bin\Debug\Bunifu_UI_v1.5.3.dll" /&gt;&#xD;
+&lt;/AssemblyExplorer&gt;</s:String>
+	
+	
+	
+	
+	
 	
 	
 	
