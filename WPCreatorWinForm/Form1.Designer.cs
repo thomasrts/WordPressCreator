@@ -110,6 +110,7 @@
             // 
             this.tb_nomdossier.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.tb_nomdossier.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.tb_nomdossier.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tb_nomdossier.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.tb_nomdossier.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_nomdossier.Font = new System.Drawing.Font("Century Gothic", 9.75F);
@@ -133,6 +134,7 @@
             // 
             this.tb_nombdd.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.tb_nombdd.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.tb_nombdd.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tb_nombdd.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.tb_nombdd.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_nombdd.Font = new System.Drawing.Font("Century Gothic", 9.75F);
@@ -165,6 +167,7 @@
             // 
             this.tb_nomfichier.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.tb_nomfichier.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.tb_nomfichier.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tb_nomfichier.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.tb_nomfichier.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_nomfichier.Font = new System.Drawing.Font("Century Gothic", 9.75F);
@@ -181,13 +184,14 @@
             this.tb_nomfichier.MaxLength = 32767;
             this.tb_nomfichier.Name = "tb_nomfichier";
             this.tb_nomfichier.Size = new System.Drawing.Size(94, 31);
-            this.tb_nomfichier.TabIndex = 6;
+            this.tb_nomfichier.TabIndex = 7;
             this.tb_nomfichier.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // tb_servername
             // 
             this.tb_servername.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.tb_servername.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.tb_servername.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tb_servername.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.tb_servername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_servername.Font = new System.Drawing.Font("Century Gothic", 9.75F);
@@ -204,7 +208,7 @@
             this.tb_servername.MaxLength = 32767;
             this.tb_servername.Name = "tb_servername";
             this.tb_servername.Size = new System.Drawing.Size(94, 31);
-            this.tb_servername.TabIndex = 7;
+            this.tb_servername.TabIndex = 8;
             this.tb_servername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label6
@@ -247,6 +251,7 @@
             // 
             this.tb_pass.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.tb_pass.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.tb_pass.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tb_pass.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.tb_pass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_pass.Font = new System.Drawing.Font("Century Gothic", 9.75F);
@@ -258,7 +263,7 @@
             this.tb_pass.LineIdleColor = System.Drawing.Color.White;
             this.tb_pass.LineMouseHoverColor = System.Drawing.Color.MediumSeaGreen;
             this.tb_pass.LineThickness = 3;
-            this.tb_pass.Location = new System.Drawing.Point(183, 271);
+            this.tb_pass.Location = new System.Drawing.Point(183, 270);
             this.tb_pass.Margin = new System.Windows.Forms.Padding(4);
             this.tb_pass.MaxLength = 32767;
             this.tb_pass.Name = "tb_pass";
@@ -279,6 +284,7 @@
             // 
             this.tb_ip.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.tb_ip.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.tb_ip.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tb_ip.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.tb_ip.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_ip.Font = new System.Drawing.Font("Century Gothic", 9.75F);
@@ -634,6 +640,7 @@
             // 
             this.tb_mysql_user.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.tb_mysql_user.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.tb_mysql_user.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tb_mysql_user.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.tb_mysql_user.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_mysql_user.Font = new System.Drawing.Font("Century Gothic", 9.75F);
@@ -657,6 +664,7 @@
             // 
             this.tb_user.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.tb_user.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.tb_user.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tb_user.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.tb_user.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_user.Font = new System.Drawing.Font("Century Gothic", 9.75F);
@@ -668,7 +676,7 @@
             this.tb_user.LineIdleColor = System.Drawing.Color.White;
             this.tb_user.LineMouseHoverColor = System.Drawing.Color.MediumSeaGreen;
             this.tb_user.LineThickness = 3;
-            this.tb_user.Location = new System.Drawing.Point(183, 218);
+            this.tb_user.Location = new System.Drawing.Point(183, 208);
             this.tb_user.Margin = new System.Windows.Forms.Padding(4);
             this.tb_user.MaxLength = 32767;
             this.tb_user.Name = "tb_user";
@@ -680,6 +688,7 @@
             // 
             this.tb_mysql_mdp.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.tb_mysql_mdp.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.tb_mysql_mdp.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tb_mysql_mdp.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.tb_mysql_mdp.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_mysql_mdp.Font = new System.Drawing.Font("Century Gothic", 9.75F);
@@ -696,7 +705,7 @@
             this.tb_mysql_mdp.MaxLength = 32767;
             this.tb_mysql_mdp.Name = "tb_mysql_mdp";
             this.tb_mysql_mdp.Size = new System.Drawing.Size(94, 31);
-            this.tb_mysql_mdp.TabIndex = 68;
+            this.tb_mysql_mdp.TabIndex = 6;
             this.tb_mysql_mdp.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label14
