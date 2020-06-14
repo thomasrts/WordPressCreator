@@ -68,6 +68,9 @@
             this.tb_user = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.tb_mysql_mdp = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.sw_language = new Bunifu.Framework.UI.BunifuiOSSwitch();
             this.SuspendLayout();
             // 
             // label1
@@ -114,7 +117,7 @@
             this.tb_nomdossier.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.tb_nomdossier.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_nomdossier.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tb_nomdossier.ForeColor = System.Drawing.Color.White;
+            this.tb_nomdossier.ForeColor = System.Drawing.Color.Black;
             this.tb_nomdossier.HintForeColor = System.Drawing.Color.Empty;
             this.tb_nomdossier.HintText = "";
             this.tb_nomdossier.isPassword = false;
@@ -138,7 +141,7 @@
             this.tb_nombdd.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.tb_nombdd.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_nombdd.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tb_nombdd.ForeColor = System.Drawing.Color.White;
+            this.tb_nombdd.ForeColor = System.Drawing.Color.Black;
             this.tb_nombdd.HintForeColor = System.Drawing.Color.Empty;
             this.tb_nombdd.HintText = "";
             this.tb_nombdd.isPassword = false;
@@ -171,7 +174,7 @@
             this.tb_nomfichier.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.tb_nomfichier.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_nomfichier.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tb_nomfichier.ForeColor = System.Drawing.Color.White;
+            this.tb_nomfichier.ForeColor = System.Drawing.Color.Black;
             this.tb_nomfichier.HintForeColor = System.Drawing.Color.Empty;
             this.tb_nomfichier.HintText = "";
             this.tb_nomfichier.isPassword = false;
@@ -195,7 +198,7 @@
             this.tb_servername.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.tb_servername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_servername.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tb_servername.ForeColor = System.Drawing.Color.White;
+            this.tb_servername.ForeColor = System.Drawing.Color.Black;
             this.tb_servername.HintForeColor = System.Drawing.Color.Empty;
             this.tb_servername.HintText = "";
             this.tb_servername.isPassword = false;
@@ -255,7 +258,7 @@
             this.tb_pass.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.tb_pass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_pass.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tb_pass.ForeColor = System.Drawing.Color.White;
+            this.tb_pass.ForeColor = System.Drawing.Color.Black;
             this.tb_pass.HintForeColor = System.Drawing.Color.Empty;
             this.tb_pass.HintText = "";
             this.tb_pass.isPassword = true;
@@ -288,7 +291,7 @@
             this.tb_ip.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.tb_ip.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_ip.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tb_ip.ForeColor = System.Drawing.Color.White;
+            this.tb_ip.ForeColor = System.Drawing.Color.Black;
             this.tb_ip.HintForeColor = System.Drawing.Color.Empty;
             this.tb_ip.HintText = "";
             this.tb_ip.isPassword = false;
@@ -331,7 +334,7 @@
             this.label8.Size = new System.Drawing.Size(437, 72);
             this.label8.TabIndex = 19;
             this.label8.Text = "Assurez-vous que l\'utilisateur à les droits administrateur sur le serveur cible e" + "t un pouvoir de création de bases de données\r\n\r\n";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_testco
             // 
@@ -393,13 +396,13 @@
             this.btn_creation.IconVisible = true;
             this.btn_creation.IconZoom = 90D;
             this.btn_creation.IsTab = false;
-            this.btn_creation.Location = new System.Drawing.Point(503, 567);
+            this.btn_creation.Location = new System.Drawing.Point(489, 568);
             this.btn_creation.Name = "btn_creation";
             this.btn_creation.Normalcolor = System.Drawing.Color.FromArgb(((int) (((byte) (46)))), ((int) (((byte) (139)))), ((int) (((byte) (87)))));
             this.btn_creation.OnHovercolor = System.Drawing.Color.FromArgb(((int) (((byte) (36)))), ((int) (((byte) (129)))), ((int) (((byte) (77)))));
             this.btn_creation.OnHoverTextColor = System.Drawing.Color.White;
             this.btn_creation.selected = false;
-            this.btn_creation.Size = new System.Drawing.Size(237, 34);
+            this.btn_creation.Size = new System.Drawing.Size(242, 34);
             this.btn_creation.TabIndex = 21;
             this.btn_creation.Text = "Créer le WordPress";
             this.btn_creation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -494,12 +497,12 @@
             // pg_etat
             // 
             this.pg_etat.BackColor = System.Drawing.Color.Silver;
-            this.pg_etat.BorderRadius = 5;
-            this.pg_etat.Location = new System.Drawing.Point(503, 623);
+            this.pg_etat.BorderRadius = 0;
+            this.pg_etat.Location = new System.Drawing.Point(489, 623);
             this.pg_etat.MaximumValue = 100;
             this.pg_etat.Name = "pg_etat";
             this.pg_etat.ProgressColor = System.Drawing.Color.MediumSeaGreen;
-            this.pg_etat.Size = new System.Drawing.Size(237, 26);
+            this.pg_etat.Size = new System.Drawing.Size(242, 26);
             this.pg_etat.TabIndex = 24;
             this.pg_etat.Value = 0;
             // 
@@ -644,7 +647,7 @@
             this.tb_mysql_user.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.tb_mysql_user.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_mysql_user.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tb_mysql_user.ForeColor = System.Drawing.Color.White;
+            this.tb_mysql_user.ForeColor = System.Drawing.Color.Black;
             this.tb_mysql_user.HintForeColor = System.Drawing.Color.Empty;
             this.tb_mysql_user.HintText = "";
             this.tb_mysql_user.isPassword = false;
@@ -668,7 +671,7 @@
             this.tb_user.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.tb_user.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_user.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tb_user.ForeColor = System.Drawing.Color.White;
+            this.tb_user.ForeColor = System.Drawing.Color.Black;
             this.tb_user.HintForeColor = System.Drawing.Color.Empty;
             this.tb_user.HintText = "";
             this.tb_user.isPassword = false;
@@ -692,7 +695,7 @@
             this.tb_mysql_mdp.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.tb_mysql_mdp.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_mysql_mdp.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tb_mysql_mdp.ForeColor = System.Drawing.Color.White;
+            this.tb_mysql_mdp.ForeColor = System.Drawing.Color.Black;
             this.tb_mysql_mdp.HintForeColor = System.Drawing.Color.Empty;
             this.tb_mysql_mdp.HintText = "";
             this.tb_mysql_mdp.isPassword = true;
@@ -717,12 +720,48 @@
             this.label14.TabIndex = 69;
             this.label14.Text = "Mot de passe MySQL";
             // 
+            // label15
+            // 
+            this.label15.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label15.Location = new System.Drawing.Point(30, 27);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(124, 31);
+            this.label15.TabIndex = 70;
+            this.label15.Text = "FR";
+            // 
+            // label16
+            // 
+            this.label16.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label16.Location = new System.Drawing.Point(96, 27);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(124, 31);
+            this.label16.TabIndex = 71;
+            this.label16.Text = "EN";
+            // 
+            // sw_language
+            // 
+            this.sw_language.BackColor = System.Drawing.Color.Transparent;
+            this.sw_language.BackgroundImage = ((System.Drawing.Image) (resources.GetObject("sw_language.BackgroundImage")));
+            this.sw_language.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.sw_language.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sw_language.Location = new System.Drawing.Point(55, 23);
+            this.sw_language.Name = "sw_language";
+            this.sw_language.OffColor = System.Drawing.Color.Gray;
+            this.sw_language.OnColor = System.Drawing.Color.FromArgb(((int) (((byte) (71)))), ((int) (((byte) (202)))), ((int) (((byte) (94)))));
+            this.sw_language.Size = new System.Drawing.Size(35, 20);
+            this.sw_language.TabIndex = 72;
+            this.sw_language.Value = false;
+            this.sw_language.OnValueChange += new System.EventHandler(this.sw_language_OnValueChange);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(800, 739);
+            this.Controls.Add(this.sw_language);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.tb_mysql_mdp);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.tb_user);
@@ -781,6 +820,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -793,6 +834,7 @@
         public System.Windows.Forms.Label lbl_status;
         public Bunifu.Framework.UI.BunifuProgressBar pg_etat;
         private Bunifu.Framework.UI.BunifuiOSSwitch sw_apache;
+        private Bunifu.Framework.UI.BunifuiOSSwitch sw_language;
         private Bunifu.Framework.UI.BunifuiOSSwitch sw_servername;
         private Bunifu.Framework.UI.BunifuMaterialTextbox tb_ip;
         public Bunifu.Framework.UI.BunifuMaterialTextbox tb_mysql_mdp;
