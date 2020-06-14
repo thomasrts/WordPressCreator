@@ -28,8 +28,8 @@ Next update : Unknown
 
 This software use 3 DLL's : 
 
-- DLL WinSCP to insure file transfer of Apache conf files
-- DLL Renshi Ssh.Net to insure remote server connection & send SSH commands
+- DLL WinSCP to ensure file transfer of Apache conf files
+- DLL Renshi Ssh.Net to ensure remote server connection & send SSH commands
 - DLL Bunifu Framework, Graphical DLL
 
 Please, keep DLL's at executable's root to guarantee proper functioning of this software
