@@ -22,7 +22,7 @@ Crée par Thomas ROTSAERT, [Ouranet](https://www.ouranet.com)
 
 ## Automatic WordPress creation tool coded in C#
 
-## Last update : Graphical aspected corrected, adding textbox for MySQL password
+### Last update : Graphical aspected corrected, adding textbox for MySQL password
 
 Next update : Unknown
 
