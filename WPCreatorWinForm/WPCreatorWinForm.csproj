@@ -64,16 +64,16 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Fonctions.cs" />
-        <Compile Include="Form1.cs">
+        <Compile Include="WPCreator.cs">
             <SubType>Form</SubType>
         </Compile>
-        <Compile Include="Form1.Designer.cs">
-            <DependentUpon>Form1.cs</DependentUpon>
+        <Compile Include="WPCreator.Designer.cs">
+            <DependentUpon>WPCreator.cs</DependentUpon>
         </Compile>
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-        <EmbeddedResource Include="Form1.resx">
-            <DependentUpon>Form1.cs</DependentUpon>
+        <EmbeddedResource Include="WPCreator.resx">
+            <DependentUpon>WPCreator.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
@@ -110,6 +110,6 @@
     </ItemGroup>
     <Target Name="ILMerge">
         <!-- the ILMergePath property points to the location of ILMerge.exe console application -->
-        <Exec Command="$(ILMergeConsolePath) /out:WPCreatorWinForm.exe WPCreatorWinForm\bin\Debug\WinSCPnet.dll WPCreatorWinForm\bin\Debug\Renci.SshNet.dll WPCreatorWinForm\bin\Debug\MySql.Data.dll WPCreatorWinForm\bin\Debug\Bunifu.Core.dll WPCreatorWinForm\bin\Debug\Bunifu_UI_v1.5.3.dll "/>
+        <Exec Command="$(ILMergeConsolePath) /out:WPCreatorWinForm.exe WPCreatorWinForm\bin\Debug\WinSCPnet.dll WPCreatorWinForm\bin\Debug\Renci.SshNet.dll WPCreatorWinForm\bin\Debug\MySql.Data.dll WPCreatorWinForm\bin\Debug\Bunifu.Core.dll WPCreatorWinForm\bin\Debug\Bunifu_UI_v1.5.3.dll " />
     </Target>
 </Project>
