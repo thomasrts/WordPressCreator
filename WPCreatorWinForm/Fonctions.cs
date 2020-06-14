@@ -151,7 +151,7 @@ namespace WPCreatorWinForm
                                             {
                                                 serveur.Connect();
                                                 serveur.RunCommand(lesCommandes[5]);
-                                                //Change le propriétaire des fichiers & dossiers du WP en www-data / Changing owner of filed & folders of WP to www-data
+                                                //Change le propriétaire des fichiers & dossiers du WP en www-data / Changing owner of files & folders of WP to www-data
                                                 _form1.lbl_status.Text = @"Changement du propriétaire effectué";
                                                 serveur.Disconnect();
                                                 try
