@@ -116,7 +116,7 @@ namespace WPCreatorWinForm
                             {
                                 serveur.Connect();
                                 serveur.RunCommand(lesCommandes[1]);
-                                //Téléchargement de WordPress / WP download running
+                                //Téléchargement de WordPress / WP downloading
                                 _form1.lbl_status.Text = @"WordPress téléchargé";
                                 serveur.Disconnect();
                                 try
