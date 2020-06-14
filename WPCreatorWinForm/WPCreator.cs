@@ -67,12 +67,24 @@ namespace WPCreatorWinForm
 
             pg_etat.Value = 25;
             fonctions.CreationWordpress(tb_nomdossier.Text, tb_nombdd.Text, tb_mysql_user.Text, tb_mysql_mdp.Text, sw_language.Value);
+            if (sw_language.Value == false)
+                lbl_status.Text = @"WordPress et base de données crées";
+            else
+                lbl_status.Text = @"WP & DB created";
             pg_etat.Value = 50;
             if (sw_apache.Value && tb_nomfichier.Text != null)
             {
                 fonctions.CreationApache(tb_nomdossier.Text, tb_nomfichier.Text, sw_servername.Value, tb_servername.Text, sw_language.Value);
+                if (sw_language.Value == false)
+                    lbl_status.Text = @"Fichier de configuration Apache crée";
+                else
+                    lbl_status.Text = @"Apache conf file created";
                 pg_etat.Value = 80;
                 fonctions.UploadFichiers(tb_nomfichier.Text, sw_language.Value);
+                if (sw_language.Value == false)
+                    lbl_status.Text = @"Upload des fichiers effectué";
+                else
+                    lbl_status.Text = @"Files upload done";
                 pg_etat.Value = 100;
             }
 
@@ -83,7 +95,11 @@ namespace WPCreatorWinForm
         {
             if (tb_mysql_user.Text == "")
             {
-                MessageBox.Show(@"Renseignez un user pour MySQL", @"Erreur d'enregistrement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (sw_language.Value == false)
+                    MessageBox.Show(@"Renseignez un user pour MySQL", @"Erreur d'enregistrement", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show(@"Fill a MySQL username", @"Saving error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
             }
             else
             {
