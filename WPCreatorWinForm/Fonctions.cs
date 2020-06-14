@@ -10,10 +10,10 @@ namespace WPCreatorWinForm
 {
     public class Fonctions
     {
-        private Form1 _form1 = new Form1();
+        private readonly string[] lesCommandes = new string[12];
+        private readonly Form1 _form1 = new Form1();
 
         private string IP;
-        private readonly string[] lesCommandes = new string[12];
         private string password;
         private string Path;
         private string Username;
@@ -63,7 +63,7 @@ namespace WPCreatorWinForm
                 try
                 {
                     serveur.Connect();
-                    _form1.lbl_status.Text = @"Connecté à l'hôte : " + this.IP;
+                    _form1.lbl_status.Text = @"Connecté à l'hôte : " + IP;
                     serveur.Disconnect();
                     return true;
                 }
@@ -92,12 +92,13 @@ namespace WPCreatorWinForm
         }
 
         /// <summary>
-        /// Main function which allow to implement the whole WP
+        ///     Main function which allow to implement the whole WP
         /// </summary>
         /// <param name="prmNomDossier">WP's folder name in /var/www/ root</param>
         /// <param name="prmNomBDD">DB name in MySQL</param>
         /// <param name="prmNomUserMySQL">Username to be used to log in to MySQL</param>
         /// <param name="prmMdpMySQL">Password to log on MySQL</param>
+        /// <param name="stateSwLang"></param>
         public void CreationWordpress(string prmNomDossier, string prmNomBDD, string prmNomUserMySQL, string prmMdpMySQL, bool stateSwLang)
         {
             if (ConnexionServeur())
@@ -111,7 +112,7 @@ namespace WPCreatorWinForm
                             serveur.Connect();
                             serveur.RunCommand(lesCommandes[0]);
                             //Mise à jour du serveur
-                            
+
                             if (stateSwLang == false)
                                 _form1.lbl_status.Text = @"Connexion au serveur réussie";
                             else
@@ -149,7 +150,7 @@ namespace WPCreatorWinForm
                                         lesCommandes[3] = "sudo mv wordpress/ /var/www/" + prmNomDossier;
                                         lesCommandes[4] = "sudo cd /var/www/" + prmNomDossier;
                                         lesCommandes[5] = "sudo chown -R www-data:www-data /var/www/" + prmNomDossier;
-                                        lesCommandes[10] = "mysql -u " + prmNomUserMySQL + "--password="+prmMdpMySQL+" -e 'create database " + prmNomBDD + "'";
+                                        lesCommandes[10] = "mysql -u " + prmNomUserMySQL + "--password=" + prmMdpMySQL + " -e 'create database " + prmNomBDD + "'";
                                         //Redéfinition des commandes utilisées avec les paramèètres renseignés / SSH functions redefinded
                                         serveur.RunCommand(lesCommandes[3]);
                                         //Déplacement du dossier WP / WP's folder moved
@@ -231,6 +232,7 @@ namespace WPCreatorWinForm
             //Redéfinition des commandes SSH avec le nom du site / SSH functions redefinded
             if (prmSwitchValue && prmNomSite != null)
                 //Vérification de l'existance des dossiers du logiciel / Verifying that folders have been created 
+            {
                 if (Directory.Exists(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator"))
                 {
                     if (Directory.Exists(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs"))
@@ -292,7 +294,8 @@ namespace WPCreatorWinForm
                             _form1.lbl_status.Text = @"Apache conf file created and ready to be send";
                     }
                 }
-            
+            }
+
             else
             {
                 if (Directory.Exists(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator"))
@@ -358,9 +361,10 @@ namespace WPCreatorWinForm
         }
 
         /// <summary>
-        /// Function which upload Apache conf files to server using Sftp 
+        ///     Function which upload Apache conf files to server using Sftp
         /// </summary>
         /// <param name="prmNomSite"></param>
+        /// <param name="stateSwLang"></param>
         public void UploadFichiers(string prmNomSite, bool stateSwLang)
         {
             var sessionOptions = new SessionOptions
@@ -390,7 +394,7 @@ namespace WPCreatorWinForm
 
                 // Throw on any error
                 transferResult.Check();
-                
+
                 if (stateSwLang == false)
                     _form1.lbl_status.Text = @"Fichier Apache envoyé";
                 else
@@ -424,18 +428,13 @@ namespace WPCreatorWinForm
                             _form1.lbl_status.Text = @"Apache service restarted";
                         client.Disconnect();
                         if (stateSwLang == false)
-                        {
                             MessageBox.Show(
                                 @"Activation du site effectuée ! Félicitations, votre site est disponible à partir de l'adresse suivante : " +
                                 prmNomSite);
-                        }
                         else
-                        {
                             MessageBox.Show(
                                 @"Site activation done ! Congratulations, your site is now available at this following address : " +
                                 prmNomSite);
-                        }
-                        
                     }
                     catch (SshException sshException)
                     {

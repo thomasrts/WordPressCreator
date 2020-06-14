@@ -11,13 +11,8 @@ namespace WPCreatorWinForm
             InitializeComponent();
             label3.Visible = false;
             tb_servername.Visible = false;
-            AppDomain.CurrentDomain.UnhandledException += (sender, args) =>
-            {
-               
-            };
-            Application.ThreadException +=(sender,args) => {
-               
-            };
+            AppDomain.CurrentDomain.UnhandledException += (sender, args) => { };
+            Application.ThreadException += (sender, args) => { };
         }
 
         private void sw_servername_OnValueChange(object sender, EventArgs e)
@@ -43,9 +38,7 @@ namespace WPCreatorWinForm
                     lbl_status.Text = @"Connexion au serveur réussie";
                 else
                     lbl_status.Text = @"Succesful connection to the server";
-
             }
-            
         }
 
         private void btn_quit_Click(object sender, EventArgs e)
@@ -70,8 +63,8 @@ namespace WPCreatorWinForm
                     lbl_status.Text = @"Connexion au serveur réussie";
                 else
                     lbl_status.Text = @"Succesful connection to the server";
-
             }
+
             pg_etat.Value = 25;
             fonctions.CreationWordpress(tb_nomdossier.Text, tb_nombdd.Text, tb_mysql_user.Text, tb_mysql_mdp.Text, sw_language.Value);
             pg_etat.Value = 50;
@@ -88,7 +81,7 @@ namespace WPCreatorWinForm
 
         private void btn_saveconf_Click(object sender, EventArgs e)
         {
-            if (this.tb_mysql_user.Text == "")
+            if (tb_mysql_user.Text == "")
             {
                 MessageBox.Show(@"Renseignez un user pour MySQL", @"Erreur d'enregistrement", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -135,7 +128,6 @@ namespace WPCreatorWinForm
 
                         sw_apache.Value = true;
                     }
-            
         }
 
         private void btn_loadconf_Click(object sender, EventArgs e)
@@ -162,47 +154,48 @@ namespace WPCreatorWinForm
                 tb_nomfichier.Visible = true;
             }
         }
+
         private void sw_language_OnValueChange(object sender, EventArgs e)
         {
             if (sw_language.Value == false)
             {
                 label10.Text = @"Adresse IP du serveur";
                 label9.Text = @"Nom d'utilisateur";
-                labelmdp.Text= @"Mot de passe";
-                label1.Text= @"Nom du dossier du WP (après /var/www/)";
-                label2.Text= @"Nom de la base de données MySQL";
-                label13.Text= @"Nom d'utilisateur MySQL";
-                label14.Text= @"Mot de passe MySQL";
-                label12.Text= @"Fichier de conf. necessaire ?";
-                label5.Text= @"Nom du fichier de configuration Apache";
-                label4.Text= @"ServerName ?";
-                label3.Text= @"ServerName";
-                label11.Text= @"Presets de configuration";
-                label8.Text= @"Assurez-vous que l'utilisateur à les droits administrateur sur le serveur cible et un pouvoir de création de bases de données";
-                btn_testco.Text= @"Tester la connexion";
-                btn_saveconf.Text= @"Sauvegarder la configuration";
-                btn_loadconf.Text= @"Charger la configuration";
-                btn_creation.Text= @"Créer le WordPress";
+                labelmdp.Text = @"Mot de passe";
+                label1.Text = @"Nom du dossier du WP (après /var/www/)";
+                label2.Text = @"Nom de la base de données MySQL";
+                label13.Text = @"Nom d'utilisateur MySQL";
+                label14.Text = @"Mot de passe MySQL";
+                label12.Text = @"Fichier de conf. necessaire ?";
+                label5.Text = @"Nom du fichier de configuration Apache";
+                label4.Text = @"ServerName ?";
+                label3.Text = @"ServerName";
+                label11.Text = @"Presets de configuration";
+                label8.Text = @"Assurez-vous que l'utilisateur à les droits administrateur sur le serveur cible et un pouvoir de création de bases de données";
+                btn_testco.Text = @"Tester la connexion";
+                btn_saveconf.Text = @"Sauvegarder la configuration";
+                btn_loadconf.Text = @"Charger la configuration";
+                btn_creation.Text = @"Créer le WordPress";
             }
             else
             {
                 label10.Text = @"Server's IP";
                 label9.Text = @"SSH Username";
-                labelmdp.Text= @"SSH Password";
-                label1.Text= @"WP's folder name (next /var/www/)";
-                label2.Text= @"MySQL Database name";
-                label13.Text= @"MySQL Username";
-                label14.Text= @"MySQL Password";
-                label12.Text= @"Configuration file needed?";
-                label5.Text= @"Apache's conf file name";
-                label4.Text= @"ServerName ?";
-                label3.Text= @"ServerName";
-                label11.Text= @"Configuration presets";
-                label8.Text= @"Please, ensure that the user has root access on the target server and abilities to create databases";
-                btn_testco.Text= @"Test connection";
-                btn_saveconf.Text= @"Save configuration";
-                btn_loadconf.Text= @"Load configuration";
-                btn_creation.Text= @"Create WordPress";
+                labelmdp.Text = @"SSH Password";
+                label1.Text = @"WP's folder name (next /var/www/)";
+                label2.Text = @"MySQL Database name";
+                label13.Text = @"MySQL Username";
+                label14.Text = @"MySQL Password";
+                label12.Text = @"Configuration file needed?";
+                label5.Text = @"Apache's conf file name";
+                label4.Text = @"ServerName ?";
+                label3.Text = @"ServerName";
+                label11.Text = @"Configuration presets";
+                label8.Text = @"Please, ensure that the user has root access on the target server and abilities to create databases";
+                btn_testco.Text = @"Test connection";
+                btn_saveconf.Text = @"Save configuration";
+                btn_loadconf.Text = @"Load configuration";
+                btn_creation.Text = @"Create WordPress";
             }
         }
     }
