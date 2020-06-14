@@ -98,7 +98,7 @@ namespace WPCreatorWinForm
         /// <param name="prmNomBDD">DB name in MySQL</param>
         /// <param name="prmNomUserMySQL">Username to be used to log in to MySQL</param>
         /// <param name="prmMdpMySQL">Password to log on MySQL</param>
-        public void CreationWordpress(string prmNomDossier, string prmNomBDD, string prmNomUserMySQL, string prmMdpMySQL)
+        public void CreationWordpress(string prmNomDossier, string prmNomBDD, string prmNomUserMySQL, string prmMdpMySQL, bool stateSwLang)
         {
             if (ConnexionServeur())
                 using (var serveur = new SshClient(IP, 22, Username, password))
@@ -111,24 +111,37 @@ namespace WPCreatorWinForm
                             serveur.Connect();
                             serveur.RunCommand(lesCommandes[0]);
                             //Mise à jour du serveur
-                            _form1.lbl_status.Text = @"Mise à jour du serveur effectuée";
+                            
+                            if (stateSwLang == false)
+                                _form1.lbl_status.Text = @"Connexion au serveur réussie";
+                            else
+                                _form1.lbl_status.Text = @"Succesful connection to the server";
                             serveur.Disconnect();
                             try
                             {
                                 serveur.Connect();
                                 serveur.RunCommand(lesCommandes[1]);
                                 //Téléchargement de WordPress / WP downloading
-                                _form1.lbl_status.Text = @"WordPress téléchargé";
+                                if (stateSwLang == false)
+                                    _form1.lbl_status.Text = @"WordPress téléchargé";
+                                else
+                                    _form1.lbl_status.Text = @"WP downloaded succesfully";
                                 serveur.Disconnect();
                                 try
                                 {
                                     serveur.Connect();
                                     serveur.RunCommand(lesCommandes[2]);
                                     //Extraction du WP / WP extracting
-                                    _form1.lbl_status.Text = @"WordPress extrait";
+                                    if (stateSwLang == false)
+                                        _form1.lbl_status.Text = @"WordPress extrait";
+                                    else
+                                        _form1.lbl_status.Text = @"WordPress extracted";
                                     serveur.RunCommand(lesCommandes[6]);
                                     //Suppression de l'archive WP / WP Archive deleted
-                                    _form1.lbl_status.Text = @"Archive WP supprimée";
+                                    if (stateSwLang == false)
+                                        _form1.lbl_status.Text = @"Archive WP supprimée";
+                                    else
+                                        _form1.lbl_status.Text = @"WP's archive deleted";
                                     serveur.Disconnect();
                                     try
                                     {
@@ -146,20 +159,29 @@ namespace WPCreatorWinForm
                                             serveur.Connect();
                                             serveur.RunCommand(lesCommandes[4]);
                                             //Changement du PWD / PWD changed
-                                            _form1.lbl_status.Text = @"PWD changé";
+                                            if (stateSwLang == false)
+                                                _form1.lbl_status.Text = @"PWD changé";
+                                            else
+                                                _form1.lbl_status.Text = @"PWD changed";
                                             serveur.Disconnect();
                                             try
                                             {
                                                 serveur.Connect();
                                                 serveur.RunCommand(lesCommandes[5]);
                                                 //Change le propriétaire des fichiers & dossiers du WP en www-data / Changing owner of files & folders of WP to www-data
-                                                _form1.lbl_status.Text = @"Changement du propriétaire effectué";
+                                                if (stateSwLang == false)
+                                                    _form1.lbl_status.Text = @"Changement du propriétaire effectué";
+                                                else
+                                                    _form1.lbl_status.Text = @"Owner changed";
                                                 serveur.Disconnect();
                                                 try
                                                 {
                                                     serveur.Connect();
                                                     serveur.RunCommand(lesCommandes[10]);
-                                                    _form1.lbl_status.Text = @"Base de données créée";
+                                                    if (stateSwLang == false)
+                                                        _form1.lbl_status.Text = @"Base de données créée";
+                                                    else
+                                                        _form1.lbl_status.Text = @"Database created";
                                                     serveur.Disconnect();
                                                     //Crée la base de données en utilisant MySQL / Creating DB into MySQL
                                                 }
@@ -200,7 +222,7 @@ namespace WPCreatorWinForm
                 }
         }
 
-        public void CreationApache(string prmEmplacementWP, string prmNomSite, bool prmSwitchValue, string prmServerName)
+        public void CreationApache(string prmEmplacementWP, string prmNomSite, bool prmSwitchValue, string prmServerName, bool stateSwLang)
         {
             lesCommandes[7] = "sudo a2ensite " + prmNomSite + ".conf";
             lesCommandes[8] = "sudo mv /tmp/" + prmNomSite + ".conf /etc/apache2/sites-available/" + prmNomSite +
@@ -218,7 +240,10 @@ namespace WPCreatorWinForm
                         File.WriteAllText(@"C:\users\" + Environment.UserName +
                                           @"\AppData\Local\WPCreator\ApacheConfs\" +
                                           prmNomSite + ".conf", lignes_conf);
-                        _form1.lbl_status.Text = @"Fichier Apache crée et prêt à être envoyé";
+                        if (stateSwLang == false)
+                            _form1.lbl_status.Text = @"Fichier Apache crée et prêt à être envoyé";
+                        else
+                            _form1.lbl_status.Text = @"Apache conf file created and ready to be send";
                     }
                     else
                     {
@@ -229,7 +254,10 @@ namespace WPCreatorWinForm
                         File.WriteAllText(@"C:\users\" + Environment.UserName +
                                           @"\AppData\Local\WPCreator\ApacheConfs\" +
                                           prmNomSite + ".conf", lignes_conf);
-                        _form1.lbl_status.Text = @"Fichier Apache crée et prêt à être envoyé";
+                        if (stateSwLang == false)
+                            _form1.lbl_status.Text = @"Fichier Apache crée et prêt à être envoyé";
+                        else
+                            _form1.lbl_status.Text = @"Apache conf file created and ready to be send";
                     }
                 }
                 else
@@ -244,7 +272,10 @@ namespace WPCreatorWinForm
                         File.WriteAllText(@"C:\users\" + Environment.UserName +
                                           @"\AppData\Local\WPCreator\ApacheConfs\" +
                                           prmNomSite + ".conf", lignes_conf);
-                        _form1.lbl_status.Text = @"Fichier Apache crée et prêt à être envoyé";
+                        if (stateSwLang == false)
+                            _form1.lbl_status.Text = @"Fichier Apache crée et prêt à être envoyé";
+                        else
+                            _form1.lbl_status.Text = @"Apache conf file created and ready to be send";
                     }
                     else
                     {
@@ -255,7 +286,10 @@ namespace WPCreatorWinForm
                         File.WriteAllText(@"C:\users\" + Environment.UserName +
                                           @"\AppData\Local\WPCreator\ApacheConfs\" +
                                           prmNomSite + ".conf", lignes_conf);
-                        _form1.lbl_status.Text = @"Fichier Apache crée et prêt à être envoyé";
+                        if (stateSwLang == false)
+                            _form1.lbl_status.Text = @"Fichier Apache crée et prêt à être envoyé";
+                        else
+                            _form1.lbl_status.Text = @"Apache conf file created and ready to be send";
                     }
                 }
             
@@ -270,7 +304,10 @@ namespace WPCreatorWinForm
                             @"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs/" +
                             prmNomSite +
                             ".conf", lignes_conf);
-                        _form1.lbl_status.Text = @"Fichier Apache crée et prêt à être envoyé";
+                        if (stateSwLang == false)
+                            _form1.lbl_status.Text = @"Fichier Apache crée et prêt à être envoyé";
+                        else
+                            _form1.lbl_status.Text = @"Apache conf file created and ready to be send";
                     }
                     else
                     {
@@ -281,7 +318,10 @@ namespace WPCreatorWinForm
                             @"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs/" +
                             prmNomSite +
                             ".conf", lignes_conf);
-                        _form1.lbl_status.Text = @"Fichier Apache crée et prêt à être envoyé";
+                        if (stateSwLang == false)
+                            _form1.lbl_status.Text = @"Fichier Apache crée et prêt à être envoyé";
+                        else
+                            _form1.lbl_status.Text = @"Apache conf file created and ready to be send";
                     }
                 }
                 else
@@ -294,7 +334,10 @@ namespace WPCreatorWinForm
                             @"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs/" +
                             prmNomSite +
                             ".conf", lignes_conf);
-                        _form1.lbl_status.Text = @"Fichier Apache crée et prêt à être envoyé";
+                        if (stateSwLang == false)
+                            _form1.lbl_status.Text = @"Fichier Apache crée et prêt à être envoyé";
+                        else
+                            _form1.lbl_status.Text = @"Apache conf file created and ready to be send";
                     }
                     else
                     {
@@ -305,7 +348,10 @@ namespace WPCreatorWinForm
                             @"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator\ApacheConfs/" +
                             prmNomSite +
                             ".conf", lignes_conf);
-                        _form1.lbl_status.Text = @"Fichier Apache crée et prêt à être envoyé";
+                        if (stateSwLang == false)
+                            _form1.lbl_status.Text = @"Fichier Apache crée et prêt à être envoyé";
+                        else
+                            _form1.lbl_status.Text = @"Apache conf file created and ready to be send";
                     }
                 }
             }
@@ -315,7 +361,7 @@ namespace WPCreatorWinForm
         /// Function which upload Apache conf files to server using Sftp 
         /// </summary>
         /// <param name="prmNomSite"></param>
-        public void UploadFichiers(string prmNomSite)
+        public void UploadFichiers(string prmNomSite, bool stateSwLang)
         {
             var sessionOptions = new SessionOptions
             {
@@ -345,7 +391,10 @@ namespace WPCreatorWinForm
                 // Throw on any error
                 transferResult.Check();
                 
-                _form1.lbl_status.Text = @"Fichier Apache envoyé";
+                if (stateSwLang == false)
+                    _form1.lbl_status.Text = @"Fichier Apache envoyé";
+                else
+                    _form1.lbl_status.Text = @"Apache conf file sended";
             }
 
             using (var client = new SshClient(IP, 22, Username, password))
@@ -354,20 +403,39 @@ namespace WPCreatorWinForm
                 {
                     client.Connect();
                     client.RunCommand(lesCommandes[8]);
-                    _form1.lbl_status.Text = @"Fichier Apache déplacé dans le dossier des sites d'Apache";
+                    if (stateSwLang == false)
+                        _form1.lbl_status.Text = @"Fichier Apache déplacé dans le dossier sites-available";
+                    else
+                        _form1.lbl_status.Text = @"Apache conf file moved to folder sites-available";
                     client.Disconnect();
                     //Déplacement du fichier de configuration effectué / Apache conf file moved
                     try
                     {
                         client.Connect();
                         client.RunCommand(lesCommandes[7]);
-                        _form1.lbl_status.Text = @"Activation du site";
+                        if (stateSwLang == false)
+                            _form1.lbl_status.Text = @"Activation du site";
+                        else
+                            _form1.lbl_status.Text = @"Site activation pending";
                         client.RunCommand(lesCommandes[9]);
-                        _form1.lbl_status.Text = @"Service Apache redémarré";
+                        if (stateSwLang == false)
+                            _form1.lbl_status.Text = @"Service Apache redémarré";
+                        else
+                            _form1.lbl_status.Text = @"Apache service restarted";
                         client.Disconnect();
-                        MessageBox.Show(
-                            @"Activation du site effectuée ! Félicitations, votre site est disponible à partir de l'adresse suivante : " +
-                            prmNomSite);
+                        if (stateSwLang == false)
+                        {
+                            MessageBox.Show(
+                                @"Activation du site effectuée ! Félicitations, votre site est disponible à partir de l'adresse suivante : " +
+                                prmNomSite);
+                        }
+                        else
+                        {
+                            MessageBox.Show(
+                                @"Site activation done ! Congratulations, your site is now available at this following address : " +
+                                prmNomSite);
+                        }
+                        
                     }
                     catch (SshException sshException)
                     {

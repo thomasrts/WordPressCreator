@@ -64,15 +64,22 @@ namespace WPCreatorWinForm
             var fonctions = new Fonctions(tb_ip.Text, tb_user.Text, tb_pass.Text);
             fonctions.AffecterCommandes();
             pg_etat.Value = 12;
-            if (fonctions.ConnexionServeur()) lbl_status.Text = @"Connexion au serveur réussie \n Succesful connection to server";
+            if (fonctions.ConnexionServeur())
+            {
+                if (sw_language.Value == false)
+                    lbl_status.Text = @"Connexion au serveur réussie";
+                else
+                    lbl_status.Text = @"Succesful connection to the server";
+
+            }
             pg_etat.Value = 25;
-            fonctions.CreationWordpress(tb_nomdossier.Text, tb_nombdd.Text, tb_mysql_user.Text, tb_mysql_mdp.Text);
+            fonctions.CreationWordpress(tb_nomdossier.Text, tb_nombdd.Text, tb_mysql_user.Text, tb_mysql_mdp.Text, sw_language.Value);
             pg_etat.Value = 50;
             if (sw_apache.Value && tb_nomfichier.Text != null)
             {
-                fonctions.CreationApache(tb_nomdossier.Text, tb_nomfichier.Text, sw_servername.Value, tb_servername.Text);
+                fonctions.CreationApache(tb_nomdossier.Text, tb_nomfichier.Text, sw_servername.Value, tb_servername.Text, sw_language.Value);
                 pg_etat.Value = 80;
-                fonctions.UploadFichiers(tb_nomfichier.Text);
+                fonctions.UploadFichiers(tb_nomfichier.Text, sw_language.Value);
                 pg_etat.Value = 100;
             }
 
