@@ -16,7 +16,7 @@ Les DLL sont à conserver à la racine de l'executable afin de garantir le bon f
 
 Crée par Thomas ROTSAERT, [Ouranet](https://www.ouranet.com)
 
-#English version 
+# English version 
 
 # WordPressCreator
 
