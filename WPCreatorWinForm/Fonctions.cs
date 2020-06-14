@@ -97,6 +97,7 @@ namespace WPCreatorWinForm
         /// <param name="prmNomDossier">WP's folder name in /var/www/ root</param>
         /// <param name="prmNomBDD">DB name in MySQL</param>
         /// <param name="prmNomUserMySQL">Username to be used to log in to MySQL</param>
+        /// <param name="prmMdpMySQL">Password to log on MySQL</param>
         public void CreationWordpress(string prmNomDossier, string prmNomBDD, string prmNomUserMySQL, string prmMdpMySQL)
         {
             if (ConnexionServeur())
