@@ -71,7 +71,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.sw_language = new Bunifu.Framework.UI.BunifuiOSSwitch();
-            this.lst_suivi = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(489, 150);
@@ -633,16 +632,10 @@
             this.sw_language.TabIndex = 72;
             this.sw_language.Value = false;
             this.sw_language.OnValueChange += new System.EventHandler(this.sw_language_OnValueChange);
-            this.lst_suivi.FormattingEnabled = true;
-            this.lst_suivi.Location = new System.Drawing.Point(30, 477);
-            this.lst_suivi.Name = "lst_suivi";
-            this.lst_suivi.Size = new System.Drawing.Size(330, 95);
-            this.lst_suivi.TabIndex = 73;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(800, 739);
-            this.Controls.Add(this.lst_suivi);
             this.Controls.Add(this.sw_language);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
@@ -716,7 +709,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label labelmdp;
         public System.Windows.Forms.Label lbl_status;
-        public System.Windows.Forms.ListBox lst_suivi;
         public Bunifu.Framework.UI.BunifuProgressBar pg_etat;
         private Bunifu.Framework.UI.BunifuiOSSwitch sw_apache;
         private Bunifu.Framework.UI.BunifuiOSSwitch sw_language;

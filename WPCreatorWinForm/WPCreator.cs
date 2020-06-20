@@ -99,7 +99,6 @@ namespace WPCreatorWinForm
                     MessageBox.Show(@"Renseignez un user pour MySQL", @"Erreur d'enregistrement", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                     MessageBox.Show(@"Fill a MySQL username", @"Error while saving", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
             }
             else
             {
