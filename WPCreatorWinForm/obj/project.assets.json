@@ -1,6 +1,7 @@
 {
   "version": 3,
   "targets": {
+<<<<<<< HEAD
     ".NETFramework,Version=v4.7.2": {
       "ILMerge/3.0.29": {
         "type": "package",
@@ -59,10 +60,24 @@
   },
   "packageFolders": {
     "C:\\Users\\Thomas\\.nuget\\packages\\": {}
+=======
+    ".NETFramework,Version=v4.7.2": {},
+    ".NETFramework,Version=v4.7.2/win": {},
+    ".NETFramework,Version=v4.7.2/win-x64": {},
+    ".NETFramework,Version=v4.7.2/win-x86": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.7.2": []
+  },
+  "packageFolders": {
+    "C:\\Users\\thoma\\.nuget\\packages\\": {}
+>>>>>>> origin/master
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Thomas\\Desktop\\Programmation\\Projets\\C#\\Projet Création WP SSH\\WPCreatorWinForm\\WPCreatorWinForm\\WPCreatorWinForm.csproj",
       "projectName": "WPCreatorWinForm",
       "projectPath": "C:\\Users\\Thomas\\Desktop\\Programmation\\Projets\\C#\\Projet Création WP SSH\\WPCreatorWinForm\\WPCreatorWinForm\\WPCreatorWinForm.csproj",
@@ -72,6 +87,17 @@
       "skipContentFileWrite": true,
       "configFilePaths": [
         "C:\\Users\\Thomas\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+      "projectUniqueName": "C:\\Users\\thoma\\Desktop\\Projets C#\\WordPressCreator\\WPCreatorWinForm\\WPCreatorWinForm\\WPCreatorWinForm.csproj",
+      "projectName": "WPCreatorWinForm",
+      "projectPath": "C:\\Users\\thoma\\Desktop\\Projets C#\\WordPressCreator\\WPCreatorWinForm\\WPCreatorWinForm\\WPCreatorWinForm.csproj",
+      "packagesPath": "C:\\Users\\thoma\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\thoma\\Desktop\\Projets C#\\WordPressCreator\\WPCreatorWinForm\\WPCreatorWinForm\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "configFilePaths": [
+        "C:\\Users\\thoma\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> origin/master
       ],
       "originalTargetFrameworks": [
         "net472"
@@ -86,6 +112,7 @@
       }
     },
     "frameworks": {
+<<<<<<< HEAD
       "net472": {
         "dependencies": {
           "ILMerge": {
@@ -94,6 +121,9 @@
           }
         }
       }
+=======
+      "net472": {}
+>>>>>>> origin/master
     },
     "runtimes": {
       "win": {

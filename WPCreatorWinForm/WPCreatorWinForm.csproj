@@ -105,9 +105,6 @@
       </PropertyGroup>
       <Error Condition="!Exists('..\packages\ILMerge.3.0.40\build\ILMerge.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ILMerge.3.0.40\build\ILMerge.props'))" />
     </Target>
-    <ItemGroup>
-        <PackageReference Include="ILMerge" Version="3.0.29" />
-    </ItemGroup>
     <Target Name="ILMerge">
         <!-- the ILMergePath property points to the location of ILMerge.exe console application -->
         <Exec Command="$(ILMergeConsolePath) /out:WPCreatorWinForm.exe WPCreatorWinForm\bin\Debug\WinSCPnet.dll WPCreatorWinForm\bin\Debug\Renci.SshNet.dll WPCreatorWinForm\bin\Debug\MySql.Data.dll WPCreatorWinForm\bin\Debug\Bunifu.Core.dll WPCreatorWinForm\bin\Debug\Bunifu_UI_v1.5.3.dll " />

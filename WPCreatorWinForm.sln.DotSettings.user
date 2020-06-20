@@ -6,6 +6,7 @@
 	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
   &lt;Assembly Path="C:\Users\Thomas\Desktop\Programmation\Projets\C#\Projet Création WP SSH\WPCreatorWinForm\WPCreatorWinForm\bin\Debug\Bunifu.Core.dll" /&gt;&#xD;
   &lt;Assembly Path="C:\Users\Thomas\Desktop\Programmation\Projets\C#\Projet Création WP SSH\WPCreatorWinForm\WPCreatorWinForm\bin\Debug\Bunifu_UI_v1.5.3.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String>
 	
 	

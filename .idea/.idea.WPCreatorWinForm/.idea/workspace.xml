@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="4" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7906f2a1-df57-45fd-aeea-be953d08dda8" name="Default Changelist" comment="v 1.0.5.1 Code optimization &amp; cleanup&#10;Full checkup">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WPCreatorWinForm/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WPCreatorWinForm/obj/Debug/WPCreatorWinForm.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WPCreatorWinForm/obj/Debug/WPCreatorWinForm.csprojAssemblyReference.cache" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/thomasrts/WPCreatorWinForm.git" />
+      </set>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/Properties/Resources.resx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/packages.config" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/WPCreator.resx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/App.config" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/Fonctions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/WPCreator.Designer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/WPCreator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/Program.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/WPCreatorWinForm/uac.Designer.cs" />
+        <option value="$PROJECT_DIR$/WPCreatorWinForm/app.manifest" />
+        <option value="$PROJECT_DIR$/WPCreatorWinForm/Fonctions - Copy.cs" />
+        <option value="$PROJECT_DIR$/WPCreatorWinForm/Form1.Designer.cs" />
+        <option value="$PROJECT_DIR$/WPCreatorWinForm/WPCreatorWinForm.csproj" />
+        <option value="$PROJECT_DIR$/WPCreatorWinForm/Form1.cs" />
+        <option value="$PROJECT_DIR$/WPCreatorWinForm/Program.cs" />
+        <option value="$PROJECT_DIR$/WPCreatorWinForm/Fonctions.cs" />
+        <option value="$PROJECT_DIR$/WPCreatorWinForm/WPCreator.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1cJqBP4oH5NWZmOLJ7W38DPjDnc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration name="WPCreatorWinForm" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/WPCreatorWinForm/bin/Debug/WPCreatorWinForm.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WPCreatorWinForm/bin/Debug" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/WPCreatorWinForm/WPCreatorWinForm.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="Console" />
+      <option name="PROJECT_TFM" value=".NETFramework,Version=v4.7.2" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7906f2a1-df57-45fd-aeea-be953d08dda8" name="Default Changelist" comment="" />
+      <created>1590256907388</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590256907388</updated>
+      <workItem from="1590256924435" duration="5774000" />
+      <workItem from="1590332099634" duration="103000" />
+      <workItem from="1590332282924" duration="11488000" />
+      <workItem from="1590389700618" duration="54000" />
+      <workItem from="1590389813318" duration="3765000" />
+      <workItem from="1590393608983" duration="4052000" />
+      <workItem from="1590486354181" duration="597000" />
+      <workItem from="1590566773368" duration="738000" />
+      <workItem from="1590654325632" duration="69000" />
+      <workItem from="1590654426574" duration="1950000" />
+      <workItem from="1590666712374" duration="661000" />
+      <workItem from="1590775710043" duration="2514000" />
+      <workItem from="1590943391631" duration="21000" />
+      <workItem from="1590943450218" duration="1131000" />
+      <workItem from="1590944632470" duration="1187000" />
+      <workItem from="1590945881144" duration="1706000" />
+      <workItem from="1591000571462" duration="435000" />
+      <workItem from="1591208645256" duration="2695000" />
+      <workItem from="1591985169904" duration="1593000" />
+      <workItem from="1592041972481" duration="2518000" />
+      <workItem from="1592046182819" duration="2939000" />
+      <workItem from="1592120734977" duration="4788000" />
+      <workItem from="1592125766739" duration="3366000" />
+      <workItem from="1592233219262" duration="541000" />
+      <workItem from="1592297660538" duration="44000" />
+    </task>
+    <task id="LOCAL-00001" summary="v 0.9 presque fini&#10;Changement de couleur de police écrite a faire">
+      <created>1590262680433</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1590262680433</updated>
+    </task>
+    <task id="LOCAL-00002" summary="v 0.9.2 &#10;Création des conditions du switch &amp; servername">
+      <created>1590333193239</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1590333193239</updated>
+    </task>
+    <task id="LOCAL-00003" summary="v 0.9.2.2&#10;Création des conditions du switch &amp; servername">
+      <created>1590335365005</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1590335365005</updated>
+    </task>
+    <task id="LOCAL-00004" summary="v 0.9.2.2&#10;Création des conditions du switch &amp; servername">
+      <created>1590337763877</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1590337763877</updated>
+    </task>
+    <task id="LOCAL-00005" summary="v 0.9.2.2&#10;Création des conditions du switch &amp; servername">
+      <created>1590337769231</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1590337769231</updated>
+    </task>
+    <task id="LOCAL-00006" summary="v 0.9.2.2&#10;Création des conditions du switch &amp; servername">
+      <created>1590337798257</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1590337798257</updated>
+    </task>
+    <task id="LOCAL-00007" summary="v 0.9.2.4&#10;Sauvegarde &amp; chargement des configs possibles">
+      <created>1590342122448</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1590342122448</updated>
+    </task>
+    <task id="LOCAL-00008" summary="v 0.9.9&#10;Création de dossier pour le logiciel dans le AppData du User&#10;Création de BDD par tunnel SSH&#10;Presque fini">
+      <created>1590345710062</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1590345710062</updated>
+    </task>
+    <task id="LOCAL-00009" summary="v 0.9.9&#10;Création de dossier pour le logiciel dans le AppData du User&#10;Création de BDD par tunnel SSH&#10;Presque fini">
+      <created>1590345719760</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1590345719760</updated>
+    </task>
+    <task id="LOCAL-00010" summary="v 0.9.9.2&#10;Label qui indique si la connexion est réussie au lieu d'une MessageBox">
+      <created>1590346360666</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1590346360666</updated>
+    </task>
+    <task id="LOCAL-00011" summary="v 0.9.9.2&#10;Label qui indique si la connexion est réussie au lieu d'une MessageBox">
+      <created>1590348363996</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1590348363996</updated>
+    </task>
+    <task id="LOCAL-00012" summary="v 0.9.9.3&#10;Choix possible pour la création d'un fichier .conf Apache">
+      <created>1590390186791</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1590390186791</updated>
+    </task>
+    <task id="LOCAL-00013" summary="v 0.9.9.5&#10;Aucun MDP dans le code source, tout se fait automatiquement">
+      <created>1590392245389</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1590392245389</updated>
+    </task>
+    <task id="LOCAL-00014" summary="v 0.9.9.6&#10;Bugs corrigés&#10;Prochain objectif, faire les MAJ autos">
+      <created>1590392916909</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1590392916909</updated>
+    </task>
+    <task id="LOCAL-00015" summary="v 0.9.9.6.2&#10;Bugs corrigés&#10;Prochain objectif, faire les MAJ autos">
+      <created>1590393008221</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1590393008221</updated>
+    </task>
+    <task id="LOCAL-00016" summary="v 0.9.9.6.3&#10;Bugs corrigés&#10;Prochain objectif, faire les MAJ autos">
+      <created>1590393025149</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1590393025149</updated>
+    </task>
+    <task id="LOCAL-00017" summary="v 0.9.9.7&#10;Close to finish">
+      <created>1590393626638</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1590393626638</updated>
+    </task>
+    <task id="LOCAL-00018" summary="v 0.9.9.8&#10;Labal ne veut pas changer">
+      <created>1590777594138</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1590777594138</updated>
+    </task>
+    <task id="LOCAL-00019" summary="v 1.0&#10;Upgrade fixé, voir pour le fond des tb">
+      <created>1591209167815</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1591209167815</updated>
+    </task>
+    <task id="LOCAL-00020" summary="v 1.0&#10;Upgrade fixé, voir pour le fond des tb">
+      <created>1591210634247</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1591210634247</updated>
+    </task>
+    <task id="LOCAL-00021" summary="v 1.0.0.1&#10;Upgrade fixé, voir pour le fond des tb">
+      <created>1591210921244</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1591210921244</updated>
+    </task>
+    <task id="LOCAL-00022" summary="v 1.0.1&#10;Correction du bug pour l'enregistrement de l'user MySQL">
+      <created>1591211253537</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1591211253537</updated>
+    </task>
+    <task id="LOCAL-00023" summary="v 1.0.1 bis&#10;Correction du bug pour l'enregistrement de l'user MySQL">
+      <created>1591211299038</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1591211299038</updated>
+    </task>
+    <task id="LOCAL-00024" summary="dgbdhd">
+      <created>1591985794953</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1591985794953</updated>
+    </task>
+    <task id="LOCAL-00025" summary="test d'incrémentation des dll avec echec&#10;aucune dll fait son travail">
+      <created>1592048513042</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1592048513042</updated>
+    </task>
+    <task id="LOCAL-00026" summary="ajout de la case mdp, changement du tabindex and changement couleur de fond cases">
+      <created>1592048635695</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1592048635695</updated>
+    </task>
+    <task id="LOCAL-00027" summary="v 1.0.3 Adding English language by switch, and UI changes">
+      <created>1592123345623</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1592123345623</updated>
+    </task>
+    <task id="LOCAL-00028" summary="v 1.0.3.1 Nthg special">
+      <created>1592123697494</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1592123697494</updated>
+    </task>
+    <task id="LOCAL-00029" summary="v 1.0.3.2 Nthg special">
+      <created>1592123722267</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1592123722267</updated>
+    </task>
+    <task id="LOCAL-00030" summary="v 1.0.3.2 Nthg special">
+      <created>1592123805927</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1592123805927</updated>
+    </task>
+    <task id="LOCAL-00031" summary="v 1.0.3.2 Nthg special">
+      <created>1592124089828</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1592124089828</updated>
+    </task>
+    <task id="LOCAL-00032" summary="v 1.0.4 Translation complete">
+      <created>1592124783135</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1592124783135</updated>
+    </task>
+    <task id="LOCAL-00033" summary="v 1.0.4.1 Code Cleanup">
+      <created>1592125809147</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1592125809147</updated>
+    </task>
+    <task id="LOCAL-00034" summary="v 1.0.5 Alternative to translate">
+      <created>1592127014220</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1592127014220</updated>
+    </task>
+    <task id="LOCAL-00035" summary="v 1.0.5.1 Code optimization &amp; cleanup&#10;Full checkup">
+      <created>1592233727521</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1592233727521</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="v 0.9.2.2&#10;Création des conditions du switch &amp; servername" />
+    <MESSAGE value="v 0.9.2.4&#10;Sauvegarde &amp; chargement des configs possibles" />
+    <MESSAGE value="v 0.9.9&#10;Création de dossier pour le logiciel dans le AppData du User&#10;Création de BDD par tunnel SSH&#10;Presque fini" />
+    <MESSAGE value="v 0.9.9.2&#10;Label qui indique si la connexion est réussie au lieu d'une MessageBox" />
+    <MESSAGE value="v 0.9.9.3&#10;Choix possible pour la création d'un fichier .conf Apache" />
+    <MESSAGE value="v 0.9.9.5&#10;Aucun MDP dans le code source, tout se fait automatiquement" />
+    <MESSAGE value="v 0.9.9.6&#10;Bugs corrigés&#10;Prochain objectif, faire les MAJ autos" />
+    <MESSAGE value="v 0.9.9.6.2&#10;Bugs corrigés&#10;Prochain objectif, faire les MAJ autos" />
+    <MESSAGE value="v 0.9.9.6.3&#10;Bugs corrigés&#10;Prochain objectif, faire les MAJ autos" />
+    <MESSAGE value="v 0.9.9.7&#10;Close to finish" />
+    <MESSAGE value="v 0.9.9.8&#10;Labal ne veut pas changer" />
+    <MESSAGE value="v 1.0&#10;Upgrade fixé, voir pour le fond des tb" />
+    <MESSAGE value="v 1.0.0.1&#10;Upgrade fixé, voir pour le fond des tb" />
+    <MESSAGE value="v 1.0.1&#10;Correction du bug pour l'enregistrement de l'user MySQL" />
+    <MESSAGE value="v 1.0.1 bis&#10;Correction du bug pour l'enregistrement de l'user MySQL" />
+    <MESSAGE value="dgbdhd" />
+    <MESSAGE value="test d'incrémentation des dll avec echec&#10;aucune dll fait son travail" />
+    <MESSAGE value="ajout de la case mdp, changement du tabindex and changement couleur de fond cases" />
+    <MESSAGE value="v 1.0.3 Adding English language by switch, and UI changes" />
+    <MESSAGE value="v 1.0.3.1 Nthg special" />
+    <MESSAGE value="v 1.0.3.2 Nthg special" />
+    <MESSAGE value="v 1.0.4 Translation complete" />
+    <MESSAGE value="v 1.0.4.1 Code Cleanup" />
+    <MESSAGE value="v 1.0.5 Alternative to translate" />
+    <MESSAGE value="v 1.0.5.1 Code optimization &amp; cleanup&#10;Full checkup" />
+    <option name="LAST_COMMIT_MESSAGE" value="v 1.0.5.1 Code optimization &amp; cleanup&#10;Full checkup" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2472" y="165" key="#Plugins" timestamp="1591985271264">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2472" y="165" key="#Plugins/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1591985271264" />
+    <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590338495144">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590338495144" />
+    <state x="2754" y="439" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.ChooseSilentCodeCleanupProfileDialog" timestamp="1590946191976">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2754" y="439" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.ChooseSilentCodeCleanupProfileDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1590946191976" />
+    <state x="2622" y="345" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1" timestamp="1592125777971">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2622" y="345" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1592125777971" />
+    <state x="2744" y="471" key="Assembly removing confirmation dialog" timestamp="1591209357825">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="824" y="471" key="Assembly removing confirmation dialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590335709853" />
+    <state x="2744" y="471" key="Assembly removing confirmation dialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1591209357825" />
+    <state x="2012" y="92" width="1736" height="866" key="DiffContextDialog" timestamp="1591210878451">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2012" y="92" width="1736" height="866" key="DiffContextDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1591210878451" />
+    <state x="814" y="426" key="Github.ShareDialog" timestamp="1590262472330">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="814" y="426" key="Github.ShareDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590262472330" />
+    <state x="689" y="146" key="Github.UntrackedFilesDialog" timestamp="1590262476383">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="689" y="146" key="Github.UntrackedFilesDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590262476383" />
+    <state width="1877" height="105" key="GridCell.Tab.0.bottom" timestamp="1592136051376">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="107" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590393583322" />
+    <state width="938" height="106" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590778228950" />
+    <state width="1877" height="105" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1592136051376" />
+    <state width="1877" height="105" key="GridCell.Tab.0.center" timestamp="1592136051376">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="107" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590393583322" />
+    <state width="938" height="106" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590778228950" />
+    <state width="1877" height="105" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1592136051376" />
+    <state width="1877" height="105" key="GridCell.Tab.0.left" timestamp="1592136051376">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="107" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590393583322" />
+    <state width="938" height="106" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590778228950" />
+    <state width="1877" height="105" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1592136051376" />
+    <state width="1877" height="105" key="GridCell.Tab.0.right" timestamp="1592136051376">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="107" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590393583322" />
+    <state width="938" height="106" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590778228950" />
+    <state width="1877" height="105" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1592136051376" />
+    <state x="670" y="113" key="RiderGenerateDialog" timestamp="1590260071869">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="670" y="113" key="RiderGenerateDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590260071869" />
+    <state x="326" y="185" width="1262" height="711" key="SettingsEditor" timestamp="1592233758966">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="476" y="137" width="998" height="867" key="SettingsEditor/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590339774096" />
+    <state x="476" y="137" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590566912266" />
+    <state x="2246" y="185" width="1262" height="711" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1592125743047" />
+    <state x="326" y="185" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1592233758966" />
+    <state x="2659" y="363" key="ToolboxManager" timestamp="1591209369024">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="739" y="363" key="ToolboxManager/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590257381975" />
+    <state x="2659" y="363" key="ToolboxManager/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1591209369024" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1592233731522">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590393630555" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590777598311" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1592127020186" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1592233731522" />
+    <state x="2752" y="369" key="cloudConfig.SelfSettingsDialog" timestamp="1592124134269">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2752" y="369" key="cloudConfig.SelfSettingsDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1592124134269" />
+    <state x="527" y="262" key="com.intellij.javaee.MapExternalResourceDialog" timestamp="1590339773460">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="527" y="262" key="com.intellij.javaee.MapExternalResourceDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590339773460" />
+    <state x="767" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592233741956">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="767" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590390300058" />
+    <state x="767" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050@0.0.1920.1050" timestamp="1592233741956" />
+    <state x="662" y="298" key="git4idea.merge.GitPullDialog" timestamp="1590390293530">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="662" y="298" key="git4idea.merge.GitPullDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590390293530" />
+    <state x="2544" y="247" key="run.anything.popup" timestamp="1592124568593">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2544" y="247" key="run.anything.popup/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1592124568593" />
+    <state x="2543" y="227" key="search.everywhere.popup" timestamp="1591209200761">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2543" y="227" key="search.everywhere.popup/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1591209200761" />
+    <state x="682" y="429" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1590339728525">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="682" y="429" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590339728525" />
+  </component>
+</project>
