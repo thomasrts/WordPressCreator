@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\thoma\AppData\Local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\thoma\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_WPCreatorWinForm.-715502966.00" t="ExcludeRecursive" />
-    <e p="C:\Users\thoma\AppData\Roaming\JetBrains\Rider2020.1\consoles\db" t="IncludeRecursive" />
-    <e p="C:\Users\thoma\AppData\Roaming\JetBrains\Rider2020.1\extensions" t="IncludeRecursive" />
-    <e p="C:\Users\thoma\Desktop\Projets C#\WordPressCreator\WPCreatorWinForm" t="IncludeFlat">
+    <e p="C:\Users\Thomas\AppData\Local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Thomas\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_WPCreatorWinForm.844660702.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Thomas\AppData\Roaming\JetBrains\Rider2020.1\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\Thomas\AppData\Roaming\JetBrains\Rider2020.1\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\Thomas\Desktop\Programmation\Projets\C#\Projet Création WP SSH\WPCreatorWinForm" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="WPCreatorWinForm" t="IncludeRecursive">
         <e p="App.config" t="Include" />
