@@ -22,9 +22,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7906f2a1-df57-45fd-aeea-be953d08dda8" name="Default Changelist" comment="v 1.0.5.1 Code optimization &amp; cleanup&#10;Full checkup">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WPCreatorWinForm/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WPCreatorWinForm/obj/Debug/WPCreatorWinForm.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WPCreatorWinForm/obj/Debug/WPCreatorWinForm.csprojAssemblyReference.cache" afterDir="false" />
+    <list default="true" id="ca39d896-4380-49ab-8f54-8b860a555516" name="기본 변경 목록" comment="v 1.1.0.1 Correcting push problems">
+      <change beforePath="$PROJECT_DIR$/WPCreatorWinForm.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/WPCreatorWinForm.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,15 +42,19 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/Properties/Resources.resx" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/packages.config" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/WPCreator.resx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/App.config" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/Fonctions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/Fonctions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/30BE6566-159F-4C5A-B83F-BDFC082877AE/dc/6d6911eb/BunifuCustomTextbox.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/WPCreator.Designer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/WPCreator.resx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/WPCreator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/30BE6566-159F-4C5A-B83F-BDFC082877AE/f0/e69d760c/Bunifu_UI_v1.5.3.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/packages.config" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/CACE0EDA-3518-4F04-9477-D9F182300AB9/8f/d963d9d6/Bunifu.Core.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/obj/project.assets.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/Properties/Resources.resx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WPCreatorWinForm/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -85,7 +88,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="RiderNuGetOptionsPageId" />
   </component>
   <component name="RunManager">
     <configuration name="WPCreatorWinForm" type="DotNetProject" factoryName=".NET Project">
@@ -499,13 +502,13 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="670" y="113" key="RiderGenerateDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590260071869" />
-    <state x="326" y="185" width="1262" height="711" key="SettingsEditor" timestamp="1592233758966">
+    <state x="326" y="185" width="1262" height="711" key="SettingsEditor" timestamp="1592682566339">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="476" y="137" width="998" height="867" key="SettingsEditor/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590339774096" />
     <state x="476" y="137" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590566912266" />
     <state x="2246" y="185" width="1262" height="711" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1592125743047" />
-    <state x="326" y="185" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1592233758966" />
+    <state x="326" y="185" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1592682566339" />
     <state x="2659" y="363" key="ToolboxManager" timestamp="1591209369024">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
