@@ -57,38 +57,72 @@ namespace WPCreatorWinForm
             var fonctions = new Fonctions(tb_ip.Text, tb_user.Text, tb_pass.Text);
             fonctions.AffecterCommandes();
             pg_etat.Value = 12;
-            if (fonctions.ConnexionServeur())
+            if (tb_ip.Text == "" || tb_user.Text == "" || tb_pass.Text == "" || tb_nomdossier.Text == "" || tb_nombdd.Text == "" || tb_mysql_user.Text == "" ||
+                tb_mysql_mdp.Text == "")
             {
+                pg_etat.Value = 0;
                 if (sw_language.Value == false)
-                    lbl_status.Text = @"Connexion au serveur réussie";
+                {
+                    MessageBox.Show(@"Au moins un des champs requis est vide, veuillez vérifier l'intégralité de vos informations",@"Erreur lors de la création",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    lbl_status.Text = @"Processus avorté, au moins un champ n'est pas correctement rempli";
+                }
                 else
-                    lbl_status.Text = @"Succesful connection to the server";
+                {
+                    MessageBox.Show(@"At least one field is not filled, please check all credentials",@"Error while creating",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    lbl_status.Text = @"Process aborted, at least one field is empty";
+                }
             }
-
-            pg_etat.Value = 25;
-            fonctions.CreationWordpress(tb_nomdossier.Text, tb_nombdd.Text, tb_mysql_user.Text, tb_mysql_mdp.Text, sw_language.Value);
-            if (sw_language.Value == false)
-                lbl_status.Text = @"WordPress et base de données crées";
             else
-                lbl_status.Text = @"WP & DB created";
-            pg_etat.Value = 50;
-            if (sw_apache.Value && tb_nomfichier.Text != null)
             {
-                fonctions.CreationApache(tb_nomdossier.Text, tb_nomfichier.Text, sw_servername.Value, tb_servername.Text, sw_language.Value);
-                if (sw_language.Value == false)
-                    lbl_status.Text = @"Fichier de configuration Apache crée";
-                else
-                    lbl_status.Text = @"Apache conf file created";
-                pg_etat.Value = 80;
-                fonctions.UploadFichiers(tb_nomfichier.Text, sw_language.Value);
-                if (sw_language.Value == false)
-                    lbl_status.Text = @"Upload des fichiers effectué";
-                else
-                    lbl_status.Text = @"Files upload done";
-                pg_etat.Value = 100;
-            }
+                if (fonctions.VerifierNomBDD(tb_nombdd.Text, sw_language.Value))
+                {
+                    if (fonctions.ConnexionServeur())
+                    {
+                        if (sw_language.Value == false)
+                            lbl_status.Text = @"Connexion au serveur réussie";
+                        else
+                            lbl_status.Text = @"Succesful connection to the server";
 
-            pg_etat.Value = 100;
+                        pg_etat.Value = 25;
+                        fonctions.CreationWordpress(tb_nomdossier.Text, tb_nombdd.Text, tb_mysql_user.Text, tb_mysql_mdp.Text, sw_language.Value);
+                        if (sw_language.Value == false)
+                            lbl_status.Text = @"WordPress et base de données crées";
+                        else
+                            lbl_status.Text = @"WP & DB created";
+                        pg_etat.Value = 50;
+                        if (sw_apache.Value && tb_nomfichier.Text != null)
+                        {
+                            fonctions.CreationApache(tb_nomdossier.Text, tb_nomfichier.Text, sw_servername.Value, tb_servername.Text, sw_language.Value);
+                            if (sw_language.Value == false)
+                                lbl_status.Text = @"Fichier de configuration Apache crée";
+                            else
+                                lbl_status.Text = @"Apache conf file created";
+                            pg_etat.Value = 80;
+                            fonctions.UploadFichiers(tb_nomfichier.Text, sw_language.Value);
+                            if (sw_language.Value == false)
+                                lbl_status.Text = @"Upload des fichiers effectué";
+                            else
+                                lbl_status.Text = @"Files upload done";
+                            pg_etat.Value = 100;
+                        }
+                    }
+
+                    pg_etat.Value = 100;
+                }
+                else
+                {
+                    if (sw_language.Value == false)
+                    {
+                        lbl_status.Text = @"Processus avorté, erreur dans le nom de la base de données";
+                    }
+                    else
+                    {
+                        lbl_status.Text = @"Process aborted, database name error";
+                    }
+
+                    pg_etat.Value = 0;
+                }
+            }
         }
 
         private void btn_saveconf_Click(object sender, EventArgs e)

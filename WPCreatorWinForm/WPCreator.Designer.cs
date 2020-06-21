@@ -52,7 +52,6 @@
             this.btn_testco = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_creation = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.btn_quit = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_reduce = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pg_etat = new Bunifu.Framework.UI.BunifuProgressBar();
@@ -71,6 +70,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.sw_language = new Bunifu.Framework.UI.BunifuiOSSwitch();
+            this.label17 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -417,11 +417,6 @@
             this.bunifuDragControl1.TargetControl = this;
             this.bunifuDragControl1.Vertical = true;
             // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 25;
-            this.bunifuElipse1.TargetControl = this;
-            // 
             // btn_quit
             // 
             this.btn_quit.Active = false;
@@ -601,7 +596,7 @@
             // 
             this.lbl_status.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.lbl_status.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbl_status.Location = new System.Drawing.Point(55, 465);
+            this.lbl_status.Location = new System.Drawing.Point(55, 513);
             this.lbl_status.Name = "lbl_status";
             this.lbl_status.Size = new System.Drawing.Size(285, 54);
             this.lbl_status.TabIndex = 29;
@@ -753,12 +748,23 @@
             this.sw_language.Value = false;
             this.sw_language.OnValueChange += new System.EventHandler(this.sw_language_OnValueChange);
             // 
+            // label17
+            // 
+            this.label17.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label17.Location = new System.Drawing.Point(45, 462);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(174, 34);
+            this.label17.TabIndex = 73;
+            this.label17.Text = "Status : ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(800, 739);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.sw_language);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
@@ -812,7 +818,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_saveconf;
         private Bunifu.Framework.UI.BunifuFlatButton btn_testco;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.ComboBox cb_conf;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label10;
@@ -822,6 +827,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

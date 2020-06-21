@@ -102,103 +102,98 @@ namespace WPCreatorWinForm
         /// <param name="stateSwLang"></param>
         public void CreationWordpress(string prmNomDossier, string prmNomBDD, string prmNomUserMySQL, string prmMdpMySQL, bool stateSwLang)
         {
-            if (ConnexionServeur())
-                using (var serveur = new SshClient(IP, 22, Username, password))
+            using (var serveur = new SshClient(IP, 22, Username, password))
+            {
+                if (serveur.IsConnected)
+                    serveur.Disconnect();
+                else
                 {
-                    if (serveur.IsConnected)
-                        serveur.Disconnect();
-                    else
-                        try
+                    try
+                    {
+                        if (VerifierNomBDD(prmNomBDD, stateSwLang))
                         {
-                            if (VerifierNomBDD(prmNomBDD, stateSwLang))
-                            {
-                                serveur.Connect();
-                                serveur.RunCommand(lesCommandes[0]);
-                                //Mise à jour du serveur
+                            serveur.Connect();
+                            serveur.RunCommand(lesCommandes[0]);
+                            //Mise à jour du serveur
 
+                            if (stateSwLang == false)
+                                _form1.lbl_status.Text = @"Connexion au serveur réussie";
+                            else
+                                _form1.lbl_status.Text = @"Succesful connection to the server";
+                            try
+                            {
+                                serveur.RunCommand(lesCommandes[1]);
+                                //Téléchargement de WordPress / WP downloading
                                 if (stateSwLang == false)
-                                    _form1.lbl_status.Text = @"Connexion au serveur réussie";
+                                    _form1.lbl_status.Text = @"WordPress téléchargé";
                                 else
-                                    _form1.lbl_status.Text = @"Succesful connection to the server";
+                                    _form1.lbl_status.Text = @"WP downloaded succesfully";
+
+                                Thread.Sleep(350);
                                 try
                                 {
-                                    serveur.RunCommand(lesCommandes[1]);
-                                    //Téléchargement de WordPress / WP downloading
+                                    serveur.RunCommand(lesCommandes[2]);
+                                    //Extraction du WP / WP extracting
                                     if (stateSwLang == false)
-                                        _form1.lbl_status.Text = @"WordPress téléchargé";
+                                        _form1.lbl_status.Text = @"WordPress extrait";
                                     else
-                                        _form1.lbl_status.Text = @"WP downloaded succesfully";
-
+                                        _form1.lbl_status.Text = @"WordPress extracted";
+                                    Thread.Sleep(350);
+                                    serveur.RunCommand(lesCommandes[6]);
+                                    //Suppression de l'archive WP / WP Archive deleted
+                                    if (stateSwLang == false)
+                                        _form1.lbl_status.Text = @"Archive WP supprimée";
+                                    else
+                                        _form1.lbl_status.Text = @"WP's archive deleted";
                                     Thread.Sleep(350);
                                     try
                                     {
-                                        serveur.RunCommand(lesCommandes[2]);
-                                        //Extraction du WP / WP extracting
-                                        if (stateSwLang == false)
-                                            _form1.lbl_status.Text = @"WordPress extrait";
-                                        else
-                                            _form1.lbl_status.Text = @"WordPress extracted";
-                                        Thread.Sleep(350);
-                                        serveur.RunCommand(lesCommandes[6]);
-                                        //Suppression de l'archive WP / WP Archive deleted
-                                        if (stateSwLang == false)
-                                            _form1.lbl_status.Text = @"Archive WP supprimée";
-                                        else
-                                            _form1.lbl_status.Text = @"WP's archive deleted";
+                                        lesCommandes[3] = "sudo mv wordpress/ /var/www/" + prmNomDossier;
+                                        lesCommandes[4] = "sudo cd /var/www/" + prmNomDossier;
+                                        lesCommandes[5] = "sudo chown -R www-data:www-data /var/www/" + prmNomDossier;
+                                        lesCommandes[10] = "mysql -u " + prmNomUserMySQL + " --password=" + prmMdpMySQL + " -e 'create database " + prmNomBDD + "'";
+                                        //Redéfinition des commandes utilisées avec les paramèètres renseignés / SSH functions redefinded
+                                        serveur.RunCommand(lesCommandes[3]);
+                                        //Déplacement du dossier WP / WP's folder moved
                                         Thread.Sleep(350);
                                         try
                                         {
-                                            lesCommandes[3] = "sudo mv wordpress/ /var/www/" + prmNomDossier;
-                                            lesCommandes[4] = "sudo cd /var/www/" + prmNomDossier;
-                                            lesCommandes[5] = "sudo chown -R www-data:www-data /var/www/" + prmNomDossier;
-                                            lesCommandes[10] = "mysql -u " + prmNomUserMySQL + " --password=" + prmMdpMySQL + " -e 'create database " + prmNomBDD + "'";
-                                            //Redéfinition des commandes utilisées avec les paramèètres renseignés / SSH functions redefinded
-                                            serveur.RunCommand(lesCommandes[3]);
-                                            //Déplacement du dossier WP / WP's folder moved
+                                            serveur.RunCommand(lesCommandes[4]);
+                                            //Changement du PWD / PWD changed
+                                            if (stateSwLang == false)
+                                                _form1.lbl_status.Text = @"PWD changé";
+                                            else
+                                                _form1.lbl_status.Text = @"PWD changed";
                                             Thread.Sleep(350);
                                             try
                                             {
-                                                serveur.RunCommand(lesCommandes[4]);
-                                                //Changement du PWD / PWD changed
+                                                serveur.RunCommand(lesCommandes[5]);
+                                                //Change le propriétaire des fichiers & dossiers du WP en www-data / Changing owner of files & folders of WP to www-data
                                                 if (stateSwLang == false)
-                                                    _form1.lbl_status.Text = @"PWD changé";
+                                                    _form1.lbl_status.Text = @"Changement du propriétaire effectué";
                                                 else
-                                                    _form1.lbl_status.Text = @"PWD changed";
+                                                    _form1.lbl_status.Text = @"Owner changed";
                                                 Thread.Sleep(350);
                                                 try
                                                 {
-                                                    serveur.RunCommand(lesCommandes[5]);
-                                                    //Change le propriétaire des fichiers & dossiers du WP en www-data / Changing owner of files & folders of WP to www-data
+                                                    MessageBox.Show(lesCommandes[10]);
+                                                    serveur.RunCommand(lesCommandes[10]);
                                                     if (stateSwLang == false)
-                                                        _form1.lbl_status.Text = @"Changement du propriétaire effectué";
+                                                        _form1.lbl_status.Text = @"Base de données créée";
                                                     else
-                                                        _form1.lbl_status.Text = @"Owner changed";
-                                                    Thread.Sleep(350);
-                                                    try
-                                                    {
-                                                        MessageBox.Show(lesCommandes[10]);
-                                                        serveur.RunCommand(lesCommandes[10]);
-                                                        if (stateSwLang == false)
-                                                            _form1.lbl_status.Text = @"Base de données créée";
-                                                        else
-                                                            _form1.lbl_status.Text = @"Database created";
-                                                        serveur.Disconnect();
-                                                        //Crée la base de données en utilisant MySQL / Creating DB into MySQL
-                                                        if (!stateSwLang)
-                                                            MessageBox.Show(@"Nom du dossier du WordPress : /var/www/" + prmNomDossier + @"\n Nom de la base de données : " +
-                                                                            prmNomBDD, @"Récapitulatif", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                                        else
-                                                            MessageBox.Show(@"WordPress's folder name : /var/www/" + prmNomDossier + @"\n MySQL DB name : " + prmNomBDD,
-                                                                @"Summary", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                                    }
-                                                    catch (SshException exception)
-                                                    {
-                                                        MessageBox.Show(exception.ToString());
-                                                    }
+                                                        _form1.lbl_status.Text = @"Database created";
+                                                    serveur.Disconnect();
+                                                    //Crée la base de données en utilisant MySQL / Creating DB into MySQL
+                                                    if (!stateSwLang)
+                                                        MessageBox.Show(@"Nom du dossier du WordPress : /var/www/" + prmNomDossier + @"\n Nom de la base de données : " +
+                                                                        prmNomBDD, @"Récapitulatif", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                    else
+                                                        MessageBox.Show(@"WordPress's folder name : /var/www/" + prmNomDossier + @"\n MySQL DB name : " + prmNomBDD,
+                                                            @"Summary", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                                 }
-                                                catch (SshException sshException)
+                                                catch (SshException exception)
                                                 {
-                                                    MessageBox.Show(sshException.ToString());
+                                                    MessageBox.Show(exception.ToString());
                                                 }
                                             }
                                             catch (SshException sshException)
@@ -221,14 +216,20 @@ namespace WPCreatorWinForm
                                     MessageBox.Show(sshException.ToString());
                                 }
                             }
-                           
+                            catch (SshException sshException)
+                            {
+                                MessageBox.Show(sshException.ToString());
+                            }
                         }
-                        catch (SshException sshException)
-                        {
-                            MessageBox.Show(sshException.ToString());
-                        }
+                    }
+                    catch (SshException sshException)
+                    {
+                        MessageBox.Show(sshException.ToString());
+                    }
                 }
+            }
         }
+
 
         public void CreationApache(string prmEmplacementWP, string prmNomSite, bool prmSwitchValue, string prmServerName, bool stateSwLang)
         {
@@ -455,16 +456,18 @@ namespace WPCreatorWinForm
             }
         }
 
-        public bool VerifierNomBDD(string prmNomBDD, bool stateSwLang)
+        protected internal bool VerifierNomBDD(string prmNomBDD, bool stateSwLang)
         {
             for (var i = 0; i < prmNomBDD.Length; i++)
                 if (prmNomBDD[i] == '-')
                 {
                     if (!stateSwLang)
-                        MessageBox.Show(@"Il est interdit de créer une base de données avec un trait d'union, veuillez réessayer", @"Erreur lors de la création", MessageBoxButtons
-                            .OK, MessageBoxIcon.Error);
+                        MessageBox.Show(@"Il est interdit de créer une base de données avec un trait d'union, veuillez réessayer", @"Erreur lors de la création",
+                            MessageBoxButtons
+                                .OK, MessageBoxIcon.Error);
                     else
-                        MessageBox.Show(@"It's forbidden to create a DB with this symbol : - . Please retry", @"Error while creating", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(@"It's forbidden to create a DB with this symbol : - . Please retry", @"Error while creating", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
                     return false;
                 }
 
