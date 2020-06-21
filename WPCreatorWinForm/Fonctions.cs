@@ -458,8 +458,8 @@ namespace WPCreatorWinForm
 
         protected internal bool VerifierNomBDD(string prmNomBDD, bool stateSwLang)
         {
-            for (var i = 0; i < prmNomBDD.Length; i++)
-                if (prmNomBDD[i] == '-')
+            foreach(var carac in prmNomBDD)
+                if (carac == '-')
                 {
                     if (!stateSwLang)
                         MessageBox.Show(@"Il est interdit de créer une base de données avec un trait d'union, veuillez réessayer", @"Erreur lors de la création",
