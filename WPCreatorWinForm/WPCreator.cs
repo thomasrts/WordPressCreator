@@ -82,7 +82,6 @@ namespace WPCreatorWinForm
                             lbl_status.Text = @"Connexion au serveur réussie";
                         else
                             lbl_status.Text = @"Succesful connection to the server";
-
                         pg_etat.Value = 25;
                         fonctions.CreationWordpress(tb_nomdossier.Text, tb_nombdd.Text, tb_mysql_user.Text, tb_mysql_mdp.Text, sw_language.Value);
                         if (sw_language.Value == false)
@@ -106,7 +105,6 @@ namespace WPCreatorWinForm
                             pg_etat.Value = 100;
                         }
                     }
-
                     pg_etat.Value = 100;
                 }
                 else
@@ -119,7 +117,6 @@ namespace WPCreatorWinForm
                     {
                         lbl_status.Text = @"Process aborted, database name error";
                     }
-
                     pg_etat.Value = 0;
                 }
             }
@@ -174,9 +171,8 @@ namespace WPCreatorWinForm
                         var fichier = File.ReadAllLines(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator/config/config.txt");
                         foreach (var config in fichier)
                             cb_conf.Items.Add(config);
-
-                        sw_apache.Value = true;
                     }
+            sw_apache.Value = true;
         }
 
         private void btn_loadconf_Click(object sender, EventArgs e)
