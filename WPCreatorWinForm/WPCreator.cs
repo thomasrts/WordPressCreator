@@ -133,7 +133,7 @@ namespace WPCreatorWinForm
             }
             else
             {
-                var content = tb_ip.Text + ";" + tb_user.Text + ";" + tb_pass.Text + ";" + tb_mysql_user;
+                var content = tb_ip.Text + ";" + tb_user.Text + ";" + tb_pass.Text + ";" + tb_mysql_user.Text + ";"+tb_mysql_mdp.Text;
                 if (!Directory.Exists(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator"))
                 {
                     Directory.CreateDirectory(@"C:\users\" + Environment.UserName + @"\AppData\Local\WPCreator");
