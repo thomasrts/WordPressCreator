@@ -22,13 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca39d896-4380-49ab-8f54-8b860a555516" name="기본 변경 목록" comment="v 1.1.2.3&#10;Minor changes">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WPCreatorWinForm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WPCreatorWinForm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WPCreatorWinForm/bin/Debug/WPCreatorWinForm.exe" beforeDir="false" afterPath="$PROJECT_DIR$/WPCreatorWinForm/bin/Debug/WPCreatorWinForm.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WPCreatorWinForm/bin/Debug/WPCreatorWinForm.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WPCreatorWinForm/bin/Debug/WPCreatorWinForm.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WPCreatorWinForm/obj/Debug/WPCreatorWinForm.exe" beforeDir="false" afterPath="$PROJECT_DIR$/WPCreatorWinForm/obj/Debug/WPCreatorWinForm.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WPCreatorWinForm/obj/Debug/WPCreatorWinForm.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WPCreatorWinForm/obj/Debug/WPCreatorWinForm.pdb" afterDir="false" />
-    </list>
+    <list default="true" id="ca39d896-4380-49ab-8f54-8b860a555516" name="기본 변경 목록" comment="v 1.1.2.3&#10;Correcting bug about MySQL user saved &amp; adding saving of MySQL password" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -150,6 +144,7 @@
       <workItem from="1592731974263" duration="3461000" />
       <workItem from="1592765043838" duration="1016000" />
       <workItem from="1592808416632" duration="1026000" />
+      <workItem from="1592809684559" duration="318000" />
     </task>
     <task id="LOCAL-00001" summary="v 0.9 presque fini&#10;Changement de couleur de police écrite a faire">
       <created>1590262680433</created>
@@ -438,7 +433,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592766048519</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="v 1.1.2.3&#10;Correcting bug about MySQL user saved &amp; adding saving of MySQL password">
+      <created>1592809757419</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1592809757419</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -460,7 +462,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="v 0.9.9.5&#10;Aucun MDP dans le code source, tout se fait automatiquement" />
     <MESSAGE value="v 0.9.9.6&#10;Bugs corrigés&#10;Prochain objectif, faire les MAJ autos" />
     <MESSAGE value="v 0.9.9.6.2&#10;Bugs corrigés&#10;Prochain objectif, faire les MAJ autos" />
     <MESSAGE value="v 0.9.9.6.3&#10;Bugs corrigés&#10;Prochain objectif, faire les MAJ autos" />
@@ -485,7 +486,8 @@
     <MESSAGE value="v 1.1.2.1&#10;Minor change --&gt; for -&gt; foreach in Fonctions.cs, function VerifierNomBDD" />
     <MESSAGE value="v 1.1.2.2&#10;Minor change --&gt; simplifying if (language) condition" />
     <MESSAGE value="v 1.1.2.3&#10;Minor changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="v 1.1.2.3&#10;Minor changes" />
+    <MESSAGE value="v 1.1.2.3&#10;Correcting bug about MySQL user saved &amp; adding saving of MySQL password" />
+    <option name="LAST_COMMIT_MESSAGE" value="v 1.1.2.3&#10;Correcting bug about MySQL user saved &amp; adding saving of MySQL password" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2472" y="165" key="#Plugins" timestamp="1591985271264">
@@ -565,13 +567,13 @@
     </state>
     <state x="739" y="363" key="ToolboxManager/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590257381975" />
     <state x="2659" y="363" key="ToolboxManager/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1591209369024" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1592766053346">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1592809763624">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590393630555" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1590777598311" />
     <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1592733225526" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1592766053346" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1592809763624" />
     <state x="2752" y="369" key="cloudConfig.SelfSettingsDialog" timestamp="1592124134269">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
